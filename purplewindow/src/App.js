@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HomeScreen from './components/HomeScreen';
+import JobScreen from './components/JobScreen';
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,7 +9,7 @@ const JOBS = [
       "title": "Education and Social Policy Research Aide",
       "employer": "NU Education and Social Policy Department",
       "website": "https://www.sesp.northwestern.edu/",
-      "rating": 4.6, 
+      "rating": 4.6,
       "pay": "$11.10/hr",
       "hours": "8 to 10",
       "contact": "Adrienne Hu",
@@ -18,7 +19,7 @@ const JOBS = [
       "qualifications": "Qualified students are reliable, organized, able to work independently, and detail oriented with a background in education, sociology, or organizational change. We are especially interested in hiring students who are able to stay on longer than one quarter.",
       "workStudy": true,
       "onCampus": true,
-      "reviews": [ 
+      "reviews": [
           {
               "id": 1,
               "title": "Fancy from the outside",
@@ -42,12 +43,12 @@ const JOBS = [
               "locationCity": "Chicago",
               "locationState": "IL"
           },
-          
+
           {
               "id": 2,
               "title": "Great place to research!",
               "date": 20190404,
-              "recommend": true, 
+              "recommend": true,
               "outlook": "positive",
               "ceoOpinion": null,
               "balance": 5,
@@ -68,12 +69,12 @@ const JOBS = [
           },
       ]
   },
-    
+
   {
       "title": "McCormick Research Aide",
       "employer": "NU McCormick School of Engineering",
       "website": "https://www.mccormick.northwestern.edu/",
-      "rating": 3.8, 
+      "rating": 3.8,
       "pay": "$12.25/hr",
       "hours": null,
       "contact": "Eric Masanet",
@@ -83,7 +84,7 @@ const JOBS = [
       "qualifications": "Experience working with large datasets and building well-organized spreadsheets; familiarity with basic energy/environmental concepts, units, and terms; familiarity with materials end uses (e.g., buildings, infrastructure, vehicles); demonstrated analytical skills (e.g., through coursework or projects); strong work ethic; ability to work independently and in teams; ideal for engineering students, but students from other quantitative domains may be considered.",
       "workStudy": true,
       "onCampus": true,
-      "reviews": [ 
+      "reviews": [
           {
               "id": 1,
               "title": "Fancy from the outside",
@@ -107,12 +108,12 @@ const JOBS = [
               "locationCity": "Chicago",
               "locationState": "IL"
           },
-          
+
           {
               "id": 2,
               "title": "Great place to research!",
               "date": 20190404,
-              "recommend": true, 
+              "recommend": true,
               "outlook": "positive",
               "ceoOpinion": null,
               "balance": 5,
@@ -133,12 +134,12 @@ const JOBS = [
           },
       ]
   },
-    
+
     {
       "title": "Portuguese Tutor Aide",
       "employer": "NU Department of Spanish and Portuguese",
       "website": "https://www.spanish-portuguese.northwestern.edu/",
-      "rating": 2.7, 
+      "rating": 2.7,
       "pay": "$11.55/hr",
       "hours": "3 to 4",
       "contact": "Elisa Baena",
@@ -148,7 +149,7 @@ const JOBS = [
       "qualifications": "Candidates should have native or near-native proficiency in Portuguese and be responsible, punctual, flexible, helpful and outgoing.",
       "workStudy": true,
       "onCampus": true,
-      "reviews": [ 
+      "reviews": [
           {
               "id": 1,
               "title": "Fancy from the outside",
@@ -172,12 +173,12 @@ const JOBS = [
               "locationCity": "Chicago",
               "locationState": "IL"
           },
-          
+
           {
               "id": 2,
               "title": "Great place to research!",
               "date": 20190404,
-              "recommend": true, 
+              "recommend": true,
               "outlook": "positive",
               "ceoOpinion": null,
               "balance": 5,
@@ -201,10 +202,28 @@ const JOBS = [
 ];
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentPageIndex: 0,
+      currentSelectedJob: {}
+    }
+  }
+
+  selectJob = (job) => {
+    this.setState({currentPageIndex: 1, currentSelectedJob: job});
+  }
+
   render() {
-    return (
-      <HomeScreen />
-    );
+    switch (this.state.currentPageIndex) {
+      case 0:
+        return <HomeScreen selectJob={this.selectJob} jobs={JOBS} />
+      case 1:
+        return <JobScreen job={this.state.currentSelectedJob} />
+      default:
+        return <HomeScreen selectJob={this.selectJob} jobs={JOBS} />
+    }
   }
 }
 

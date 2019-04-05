@@ -8,7 +8,7 @@ class JobContainer extends Component {
   render() {
     return (
       <div style={jobContainer}>
-        <p>{this.props.title}</p>
+        <a onClick={() => this.props.selectJob()}>{this.props.title}</a>
         <p>{this.props.rating}</p>
         <p>{this.props.pay}</p>
         <p>{this.props.description}</p>
