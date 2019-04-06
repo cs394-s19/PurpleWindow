@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Review from './Review';
 class JobScreen extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +13,7 @@ class JobScreen extends Component {
         </div>
         <p>{this.props.job.title}</p>
         <p>{this.props.job.rating}</p>
+        <Review reviewDetails={this.props} index='0'/>
         {/* NOTE: CHECK APP.JS TO SEE WHAT OTHER JOB INFORMATION WAS PASSED DOWN */}
       </div>
     );
