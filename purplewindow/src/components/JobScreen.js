@@ -11,8 +11,14 @@ class JobScreen extends Component {
         <div style={headerContainer}>
           <p style={headerText}>Purple Window</p>
         </div>
+        <button onClick={() => this.props.goBack()}>Jobs</button>
         <p>{this.props.job.title}</p>
         <p>{this.props.job.rating}</p>
+        <p>Northwestern University - Evanston, IL</p>
+        <p>$10/hour     ;       10hrs/week</p>
+        <p>Description</p>
+        <p>The Research Aide will provide research and administrative support for several studies related to educational policy conducted by Professor Cynthia Coburn. This position begins in Spring 2019, with the possibility to renew. Duties include: coding interview transcripts and surveys, entering data into qualitative and quantitative software programs, reviewing literature, and performing other administrative duties. We are looking for a commitment of 8 to 10 hours per week.</p>
+        <Review />
         {/* NOTE: CHECK APP.JS TO SEE WHAT OTHER JOB INFORMATION WAS PASSED DOWN */}
       </div>
     );

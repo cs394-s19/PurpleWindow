@@ -215,12 +215,16 @@ class App extends Component {
     this.setState({currentPageIndex: 1, currentSelectedJob: job});
   }
 
+  goBack = () => {
+    this.setState({currentPageIndex: 0, currentSelectedJob: {}});
+  }
+
   render() {
     switch (this.state.currentPageIndex) {
       case 0:
         return <HomeScreen selectJob={this.selectJob} jobs={JOBS} />
       case 1:
-        return <JobScreen job={this.state.currentSelectedJob} />
+        return <JobScreen job={this.state.currentSelectedJob} selectJob={this.selectJob} goBack={this.goBack}/>
       default:
         return <HomeScreen selectJob={this.selectJob} jobs={JOBS} />
     }
