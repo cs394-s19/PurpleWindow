@@ -4,17 +4,29 @@ import ratings from '../rating.PNG';
 class Review extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    
   }
 
   render() {
+    const reviews = this.props.reviewDetails.job.reviews
+    const reviewList = reviews.map(review => {
+      return (
+        <div key={Math.random()}>
+          <div style={reviewBoxStyle}>
+            <h2 style={reviewTitle}>{review.title}</h2>
+            <img src={ratings} style={starRating}/>
+          </div>
+          <p><b>Pros</b></p>
+          <p style={reviewDescription}>{review.pros}</p>
+          <p><b>Cons</b></p>
+          <p style={reviewDescription}>{review.cons}</p>
+        </div>
+      )
+    })
     return (
+
       <div>
-      <div style={reviewBoxStyle}>
-        <h2 style={reviewTitle}>{this.props.reviewDetails.job.reviews[this.props.index].title}</h2>
-        <img src={ratings} style={starRating}/>
-      </div>
-      <p style={reviewDescription}>{this.props.reviewDetails.job.reviews[this.props.index].cons + " " + this.props.reviewDetails.job.reviews[this.props.index].pros }</p>
+      {reviewList}
       </div>
     );
   }
