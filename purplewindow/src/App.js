@@ -862,6 +862,72 @@ const JOBS = [
           },
       ]
   },
+
+  {
+    "title": "Career Ambassador",
+    "employer": "Northwestern Career Advancement",
+    "website": "https://www.northwestern.edu/careers/",
+    "rating": 4.1,
+    "pay": "$11.00/hr",
+    "hours": 6,
+    "apply": null,
+    "contact": "Taylor Kinn",
+    "email": "taylor.kinn@northwestern.edu",
+    "phone": "847-491-6737",
+    "description": "The CA program serves as a bridge between NCA and the NU student population in order to increase awareness of and engagement with NCA’s services and events. CAs serve an integral role at NCA and wear many hats: ambassador, educator, adviser and more!",
+    "qualifications": " Sincere desire and commitment to learn and help students; Genuine interest in career related issues. Preferred: Strong communicator; Responsive to emails; Demonstrated ability to take initiative; Willing to ask questions and actively contribute; Friendly and helpful; Presentation skills",
+    "workStudy": true,
+    "onCampus": true,
+    "reviews": [
+        {
+            "id": 1,
+            "title": "Good Place to Work",
+            "date": 20190402,
+            "recommend": true,
+            "outlook": "neutral",
+            "ceoOpinion": null,
+            "balance": 2,
+            "culture": 1,
+            "careerOpps": 4,
+            "benefits": 3,
+            "mgmt": 3,
+            "total": 4,
+            "pros": "Flexible scheduling for workshops and presentations",
+            "cons": "You must be prepared to give presentations on your work every two weeks.",
+            "advice": null,
+            "currentEmployee": true,
+            "fullTime": false,
+            "tenure": "<1",
+            "role": "Career Advisor",
+            "locationCity": "Evanston",
+            "locationState": "IL"
+        },
+
+        {
+            "id": 2,
+            "title": "Gets Boring",
+            "date": 20190404,
+            "recommend": true,
+            "outlook": "positive",
+            "ceoOpinion": null,
+            "balance": 5,
+            "culture": 5,
+            "careerOpps": 5,
+            "benefits": 5,
+            "mgmt": 5,
+            "total": 2,
+            "pros": "It feels good to help others reach their career goals.",
+            "cons": "It's basically the same thing every day, and it gets boring after a couple weeks.",
+            "advice": null,
+            "currentEmployee": true,
+            "fullTime": true,
+            "tenure": ">5",
+            "role": "Career Ambassador",
+            "locationCity": "Evanston",
+            "locationState": "IL"
+        },
+    ]
+  },
 ];
 
 class App extends Component {
