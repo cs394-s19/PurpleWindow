@@ -31,6 +31,7 @@ class JobScreen extends Component {
           <p><b>Reviews</b></p>
           <Review reviewDetails={this.props} index= {0}/>
         </div>
+        {/*
         <button onClick={() => this.props.goBack()}>Jobs</button>
         <p>{this.props.job.title}</p>
         <p>{this.props.job.rating}</p>
@@ -42,6 +43,7 @@ class JobScreen extends Component {
         </div>
         <div><b>Reviews</b></div>
         <Review reviewDetails={this.props} index= {0}/>
+        */}
         {/* NOTE: CHECK APP.JS TO SEE WHAT OTHER JOB INFORMATION WAS PASSED DOWN */}
       </div>
     );
