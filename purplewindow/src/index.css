@@ -78,3 +78,12 @@ html {
   margin-left: 100px;
   padding-top: 5px;
 }
+
+.contactButton {
+  padding: 15px 50px 15px 50px;
+  background-color: #8e28c9;
+  color: white;
+  font-size: 18px;
+  font-family: 'Raleway';
+  width: 100%;
+}
