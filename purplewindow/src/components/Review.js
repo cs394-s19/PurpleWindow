@@ -4,7 +4,7 @@ import ratings from '../rating.PNG';
 class Review extends Component {
   constructor(props) {
     super(props);
-    
+
   }
 
   render() {
@@ -12,14 +12,18 @@ class Review extends Component {
     const reviewList = reviews.map(review => {
       return (
         <div key={Math.random()}>
-          <div style={reviewBoxStyle}>
-            <h2 style={reviewTitle}>{review.title}</h2>
-            <img src={ratings} style={starRating}/>
+          <div style={{marginTop: 10}}>
+            <a className={"jobTitleText"} onClick={() => this.props.selectJob()}><b>{review.title}</b></a>
+            <div className={"ratingContainer"} style={{float: 'right'}}>
+              <img className="ratingStar"  src="./images/star-01.png" />
+              <p className={"ratingText"}>{review.total}</p>
+            </div>
           </div>
           <p><b>Pros</b></p>
           <p style={reviewDescription}>{review.pros}</p>
           <p><b>Cons</b></p>
           <p style={reviewDescription}>{review.cons}</p>
+          <div style={{width: "100%", height: 1, backgroundColor: "#3e3e3e", opacity: "0.2"}}></div>
         </div>
       )
     })
@@ -33,7 +37,6 @@ class Review extends Component {
 }
 
 const reviewBoxStyle = {
-  display: 'flex',
 }
 
 const starRating = {

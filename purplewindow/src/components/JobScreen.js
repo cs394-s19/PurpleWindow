@@ -16,7 +16,7 @@ class JobScreen extends Component {
             <img src="./images/back-01.png" style={{width: 15, height: 15, float: 'left'}} />
             <p className="backButtonText">Jobs</p>
           </div>
-          {/*<button onClick={() => this.props.goBack()}>Jobs</button>*/}
+          <div style={{width: "100%", height: 1, backgroundColor: "#3e3e3e", opacity: "0.2"}}></div>
           <p className={"jobTitleText"} style={{cursor: 'default'}}><b>{this.props.job.title}</b></p>
           <div>
             <div className={"ratingContainer"} style={{float: 'left'}}>
@@ -27,9 +27,11 @@ class JobScreen extends Component {
           </div>
           <p>$10/hour     ;       10hrs/week</p>
           <p><b>Description</b></p>
+          <div style={{width: "100%", height: 1, backgroundColor: "#3e3e3e", opacity: "0.2"}}></div>
           <p>The Research Aide will provide research and administrative support for several studies related to educational policy conducted by Professor Cynthia Coburn. This position begins in Spring 2019, with the possibility to renew. Duties include: coding interview transcripts and surveys, entering data into qualitative and quantitative software programs, reviewing literature, and performing other administrative duties. We are looking for a commitment of 8 to 10 hours per week.</p>
           <p><b>Reviews</b></p>
-          <Review reviewDetails={this.props} index= {0}/>
+          <div style={{width: "100%", height: 1, backgroundColor: "#3e3e3e", opacity: "0.2"}}></div>
+          <Review reviewDetails={this.props} index={0}/>
         </div>
         {/*
         <button onClick={() => this.props.goBack()}>Jobs</button>
