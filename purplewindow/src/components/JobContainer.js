@@ -16,7 +16,14 @@ class JobContainer extends Component {
           </div>
         </div>
         <p className={"payText"}>{this.props.pay}</p>
-        <p>{this.props.description}</p>
+        {
+          this.props.description.length > 300 ?
+          (
+            <p>{this.props.description.substring(0, 300) + "..."}</p>
+          ) : (
+            <p>{this.props.description}</p>
+          )
+        }
       </div>
     );
   }
