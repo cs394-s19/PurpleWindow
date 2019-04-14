@@ -42,7 +42,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -66,7 +66,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
           
           {
@@ -90,7 +90,7 @@ const JOBS = [
               "tenure": null,
               "role": null,
               "locationCity": null,
-              "locationState": null
+              "locationState": null,
         },
           
         {
@@ -114,7 +114,7 @@ const JOBS = [
               "tenure": ">3",
               "role": "Associate Director",
               "locationCity": null,
-              "locationState": null
+              "locationState": null,
         },
           
         {
@@ -138,7 +138,7 @@ const JOBS = [
               "tenure": ">1",
               "role": "Student Worker",
               "locationCity": null,
-              "locationState": null
+              "locationState": null,
         },
       ]
   },
@@ -180,7 +180,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -204,7 +204,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -246,7 +246,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -270,7 +270,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -312,7 +312,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -336,7 +336,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -378,7 +378,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -402,7 +402,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -444,7 +444,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -468,7 +468,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -510,7 +510,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -534,7 +534,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -576,7 +576,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -600,7 +600,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -642,7 +642,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -666,7 +666,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -708,7 +708,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -732,7 +732,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -774,7 +774,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -798,7 +798,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -840,7 +840,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -864,7 +864,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -906,7 +906,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -930,7 +930,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -972,7 +972,7 @@ const JOBS = [
             "tenure": "<1",
             "role": "Career Advisor",
             "locationCity": "Evanston",
-            "locationState": "IL"
+            "locationState": "IL",
         },
 
         {
@@ -996,7 +996,7 @@ const JOBS = [
             "tenure": ">5",
             "role": "Career Ambassador",
             "locationCity": "Evanston",
-            "locationState": "IL"
+            "locationState": "IL",
         },
     ]
   },
