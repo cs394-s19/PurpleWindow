@@ -42,6 +42,11 @@ html {
   color: #8e28c9;
   font-size: 20px;
   cursor: pointer;
+  display: inline-block;
+}
+
+.jobTitleDiv {
+  display: inline-block;
 }
 
 .ratingContainer {
@@ -86,4 +91,18 @@ html {
   font-size: 18px;
   font-family: 'Raleway';
   width: 100%;
+}
+
+@media only screen and (max-width: 620px) {
+  .jobTitleText {
+    font-size: 16px;
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .jobTitleText {
+    font-size: 16px;
+    width: 175px;
+  }
 }

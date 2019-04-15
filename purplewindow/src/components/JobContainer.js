@@ -10,7 +10,7 @@ class JobContainer extends Component {
     return (
       <div className={"jobContainer"}>
         <div>
-          <a className={"jobTitleText"} onClick={() => this.props.selectJob()}><b>{this.props.title}</b></a>
+            <div className={"jobTitleDiv"}><a className={"jobTitleText"} onClick={() => this.props.selectJob()}><b>{this.props.title}</b></a></div>
           <div className={"ratingContainer"} style={{float: 'right'}}>
             <img className="ratingStar"  src="./images/star-01.png" />
             <p className={"ratingText"}>{this.props.rating}</p>
