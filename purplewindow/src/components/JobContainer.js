@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+const MAX_DESC_LENGTH = 130;
 class JobContainer extends Component {
   constructor(props) {
     super(props);
@@ -17,9 +18,9 @@ class JobContainer extends Component {
         </div>
         <p className={"payText"}>{this.props.pay}</p>
         {
-          this.props.description.length > 300 ?
+          this.props.description.length > MAX_DESC_LENGTH ?
           (
-            <p>{this.props.description.substring(0, 300) + "..."}</p>
+            <p>{this.props.description.substring(0, MAX_DESC_LENGTH) + "..."}</p>
           ) : (
             <p>{this.props.description}</p>
           )
