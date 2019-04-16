@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import JobContainer from './JobContainer';
+import RankDropDownButton from './RankDropDownButton';
+import SortStateContainer from './SortStateContainer';
 
 function tagsContain(tagsArray,terms){
   for(var i = 0; i<tagsArray.length; i++){
@@ -28,7 +30,10 @@ function searchContains(title, description, terms){
 class HomeScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = {jobList: this.props.jobs.slice()};
+    this.state = {
+      jobList: this.props.jobs.slice(),
+      ranked: true
+    };
   }
 
   filterJobs = () => {
@@ -45,7 +50,24 @@ class HomeScreen extends Component {
           this.setState({jobList: this.props.jobs.slice()});;
       }
   }
+
+  isRankedByWhat = (rank) => {
+    if (rank == "Ratings") {
+      let output = [...this.state.jobList];
+      output.sort(function(a, b){return b.rating - a.rating});
+      this.setState({ranked: true, jobList: output});
+    } else {
+      this.setState({
+        ranked: false, jobList: this.props.jobs.slice()
+      });
+    } 
+  }
+
   render() {
+    // let output = [...this.state.jobList];
+    // if (this.state.ranked) {
+    //   output.sort(function(a, b){return b.rating - a.rating});
+    // }
     return (
       <div>
         <div className={"headerContainer"}>
@@ -54,11 +76,13 @@ class HomeScreen extends Component {
         <div className={"searchContainer"}>
           <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
         </div>
+        <RankDropDownButton isRankedByWhat={this.isRankedByWhat}/>
         {
           this.state.jobList.map((j, i) => {
             return <JobContainer key={i} title={j.title} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(j)} />
           })
         }
+        
       </div>
     );
   }
