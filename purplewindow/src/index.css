@@ -45,6 +45,13 @@ html {
   display: inline-block;
 }
 
+.jobTitleText2 {
+  color: #8e28c9;
+  font-size: 20px;
+  cursor: pointer;
+  display: inline-block;
+}
+
 .jobTitleDiv {
   display: inline-block;
 }

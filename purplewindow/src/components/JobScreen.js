@@ -22,7 +22,7 @@ class JobScreen extends Component {
             <p className="backButtonText">Jobs</p>
           </div>
           <div style={{width: "100%", height: 1, backgroundColor: "#3e3e3e", opacity: "0.2"}}></div>
-          <p className={"jobTitleText"} style={{cursor: 'default'}}><b>{this.props.job.title}</b></p>
+          <p className={"jobTitleText2"} style={{cursor: 'default'}}><b>{this.props.job.title}</b></p>
           <div>
             <div className={"ratingContainer"} style={{float: 'left'}}>
               <img className="ratingStar" src="./images/star-01.png"/>
