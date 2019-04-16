@@ -6,11 +6,11 @@ class HomeScreen extends Component {
     super(props);
     this.state = {jobList: this.props.jobs.slice()};
   }
-  
+
   filterJobs = () => {
-      let terms = document.getElementById("searchTerms").value;
+      let terms = document.getElementById("searchTerms").value.toLowerCase();
       if (terms) {
-          let filtered = this.props.jobs.filter(job => job.description.includes(terms));
+          let filtered = this.props.jobs.filter(job => (job.description.toLowerCase().includes(terms)||job.title.toLowerCase().includes(terms)));
           this.setState({jobList: filtered.slice()});
           console.log(this.state.jobList);
       } else {
@@ -24,7 +24,7 @@ class HomeScreen extends Component {
         <div className={"headerContainer"}>
           <p className={"headerText"}>Purple Window</p>
         </div>
-        <div className={"searchContainer"}> 
+        <div className={"searchContainer"}>
           <input className={"searchBox"} placeHolder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
         </div>
         {
