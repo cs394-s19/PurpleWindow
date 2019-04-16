@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import JobContainer from './JobContainer';
+import { Collapse, Button, CardBody, Card } from 'reactstrap';
 
 class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {jobList: this.props.jobs.slice()};
+    this.toggle = this.toggle.bind(this);
+    this.state = { collapse: false };
   }
   
   filterJobs = () => {
@@ -18,6 +21,10 @@ class HomeScreen extends Component {
       }
   }
 
+  toggle() {
+      this.setState(state => ({ collapse: !state.collapse }));
+  }
+
   render() {
     return (
       <div>
@@ -26,6 +33,12 @@ class HomeScreen extends Component {
         </div>
         <div className={"searchContainer"}> 
           <input className={"searchBox"} placeHolder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
+        </div>
+        <div className={"filterContainer"}>
+          <p className={"filterHeader"}>Filter <i class="fas fa-chevron-down down_arrow"></i> onClick={this.toggle}</p>
+          <Collapse className={"filterContent"} isOpen={this.state.collapse}>
+            Sample Info
+          </Collapse>
         </div>
         {
           this.state.jobList.map((j, i) => {
