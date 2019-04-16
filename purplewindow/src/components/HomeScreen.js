@@ -35,7 +35,7 @@ class HomeScreen extends Component {
           <input className={"searchBox"} placeHolder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
         </div>
         <div className={"filterContainer"}>
-          <p className={"filterHeader"}>Filter <i class="fas fa-chevron-down down_arrow"></i> onClick={this.toggle}</p>
+          <p className={"filterHeader"} onClick={this.toggle}>Filter <i class="fas fa-chevron-down down_arrow"></i> </p>
           <Collapse className={"filterContent"} isOpen={this.state.collapse}>
             Sample Info
           </Collapse>
