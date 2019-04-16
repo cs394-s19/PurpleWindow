@@ -15,6 +15,7 @@ class JobContainer extends Component {
             <img className="ratingStar"  src="./images/star-01.png" />
             <p className={"ratingText"}>{this.props.rating}</p>
           </div>
+          <div style={{clear: 'both'}}></div>
         </div>
         <p className={"payText"}>{this.props.pay}</p>
         {
@@ -25,6 +26,17 @@ class JobContainer extends Component {
             <p>{this.props.description}</p>
           )
         }
+        <div style={{display: 'flex', marginTop: 8}}>
+          {
+            this.props.tags.map((t, i) => {
+              return (
+                <div key={i} style={{width: 90, height: 30, backgroundColor: "#979AE6", textAlign: 'center', marginRight: 8}}>
+                  <p className={"tagText"}>{t}</p>
+                </div>
+              );
+            })
+          }
+        </div>
       </div>
     );
   }
