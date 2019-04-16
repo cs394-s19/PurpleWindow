@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class JobContainer extends Component {
   constructor(props) {
     super(props);
+    this.state = { showText: false };
   }
 
   render() {
@@ -15,11 +16,24 @@ class JobContainer extends Component {
             <p className={"ratingText"}>{this.props.rating}</p>
           </div>
         </div>
+
         <p className={"payText"}>{this.props.pay}</p>
         {
-          this.props.description.length > 300 ?
+          this.props.description.length > 100 ?
           (
-            <p>{this.props.description.substring(0, 300) + "..."}</p>
+            <div>
+              <p>{this.props.description.substring(0, 100)}
+              { this.state.showText ?
+                (<span>
+                  <span>{this.props.description.substring(100)}
+                    <a onClick={() => this.setState({ showText: !this.state.showText })} className={"seeMore"}> See less...</a>
+                  </span>
+                </span>)
+                :
+                (<a onClick={() => this.setState({ showText: !this.state.showText })} className={"seeMore"}> See more... </a>)
+              }
+              </p>
+            </div>
           ) : (
             <p>{this.props.description}</p>
           )
