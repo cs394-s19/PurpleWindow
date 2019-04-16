@@ -11,6 +11,7 @@ const JOBS = [
       "website": "https://www.sesp.northwestern.edu/",
       "rating": 4.6,
       "pay": "$11.10/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": "8 to 10",
       "apply": null,
       "contact": "Adrienne Hu",
@@ -42,7 +43,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -66,9 +67,9 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
-          
+
           {
               "id": 3,
               "title": "Great College Job",
@@ -90,9 +91,9 @@ const JOBS = [
               "tenure": null,
               "role": null,
               "locationCity": null,
-              "locationState": null
+              "locationState": null,
         },
-          
+
         {
               "id": 4,
               "title": "Great work experience",
@@ -114,9 +115,9 @@ const JOBS = [
               "tenure": ">3",
               "role": "Associate Director",
               "locationCity": null,
-              "locationState": null
+              "locationState": null,
         },
-          
+
         {
               "id": 5,
               "title": "Good part time job",
@@ -138,7 +139,7 @@ const JOBS = [
               "tenure": ">1",
               "role": "Student Worker",
               "locationCity": null,
-              "locationState": null
+              "locationState": null,
         },
       ]
   },
@@ -149,6 +150,7 @@ const JOBS = [
       "website": "https://www.mccormick.northwestern.edu/",
       "rating": 3.8,
       "pay": "$12.25/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": null,
       "apply": null,
       "contact": "Eric Masanet",
@@ -180,7 +182,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -204,7 +206,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -215,6 +217,7 @@ const JOBS = [
       "website": "https://www.spanish-portuguese.northwestern.edu/",
       "rating": 2.7,
       "pay": "$11.55/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": "3 to 4",
       "apply": null,
       "contact": "Elisa Baena",
@@ -246,7 +249,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -270,17 +273,18 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
-    
+
     {
       "title": "Entrance Desk Assistant",
       "employer": "NU Facilities Operations & Security Management",
       "website": "https://www.northwestern.edu/fm/index.html",
       "rating": 3.3,
       "pay": "$11.10/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": "12 to 20",
       "apply": "https://www.library.northwestern.edu/about/library-jobs/student-jobs/index.html",
       "contact": null,
@@ -312,7 +316,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -336,17 +340,18 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
-    
+
     {
       "title": "Text Digitization Aide",
       "employer": "NU Repository & Digital Curation",
       "website": "https://www.library.northwestern.edu/",
       "rating": 2.1,
       "pay": "$11.55/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": "8 to 12",
       "apply": "https://www.library.northwestern.edu/about/library-jobs/student-jobs/index.html",
       "contact": null,
@@ -378,7 +383,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -402,17 +407,18 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
-    
+
     {
       "title": "University Archives Audio Tour Aide",
       "employer": "NU Distinctive Collections: University Archives",
       "website": "https://www.library.northwestern.edu/",
       "rating": 3.9,
       "pay": "$11.25/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": "At least 8",
       "apply": "https://www.library.northwestern.edu/about/library-jobs/student-jobs/index.html",
       "contact": null,
@@ -444,7 +450,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -468,17 +474,18 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
-    
+
     {
       "title": "Library Receiving Aide",
       "employer": "NU Business & Receiving",
       "website": "https://www.library.northwestern.edu/",
       "rating": 1.7,
       "pay": "$11.25/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": "3 hours a day, 5 days a week",
       "apply": "https://www.library.northwestern.edu/about/library-jobs/student-jobs/index.html",
       "contact": null,
@@ -510,7 +517,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -534,17 +541,18 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
-    
+
     {
       "title": "Print Collections Assistant",
       "employer": "NU Print Collection Management",
       "website": "https://www.library.northwestern.edu/",
       "rating": 2.8,
       "pay": "$11.10/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": "8 to 12",
       "apply": "https://www.library.northwestern.edu/about/library-jobs/student-jobs/index.html",
       "contact": null,
@@ -576,7 +584,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -600,17 +608,18 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
-    
+
     {
       "title": "NUL Security Student Assistant",
       "employer": "NU Facilities Operations & Security Management",
       "website": "https://www.northwestern.edu/fm/index.html",
       "rating": 3.0,
       "pay": "$12.00/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": "10 to 20",
       "apply": "https://www.library.northwestern.edu/about/library-jobs/student-jobs/index.html",
       "contact": null,
@@ -642,7 +651,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -666,17 +675,18 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
-    
+
     {
       "title": "Lifeguard",
       "employer": "YMCA",
       "website": "http://www.mcgawymca.org/",
       "rating": 3.3,
       "pay": "$11.00/hr to $12.50/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": "Up to 15",
       "apply": null,
       "contact": "Jeanette Hollingsworth",
@@ -708,7 +718,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -732,17 +742,18 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
-    
+
     {
       "title": "Program Assistant",
       "employer": "Metrosquash Evanston",
       "website": "http://metrosquash.org/",
       "rating": 0.5,
       "pay": "$11.00/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": null,
       "apply": null,
       "contact": "Claudia Larrea",
@@ -774,7 +785,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -798,17 +809,18 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
-    
+
     {
       "title": "Tutor Aide",
       "employer": "America Reads",
       "website": "https://www.district65.net/",
       "rating": 3.8,
       "pay": "$13.00/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": null,
       "apply": null,
       "contact": "Anne Horne",
@@ -840,7 +852,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -864,17 +876,18 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
-    
+
     {
       "title": "Marketing Assistant",
       "employer": "Rotary International",
       "website": "https://www.rotary.org/en",
       "rating": 1.1,
       "pay": "$13.00/hr",
+      "tags": ["Fisk Hall", "Undergrad", "SESP"],
       "hours": "8 to 10",
       "apply": null,
       "contact": "Isabel Price",
@@ -906,7 +919,7 @@ const JOBS = [
               "tenure": "<1",
               "role": "Nurse Clinician",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
 
           {
@@ -930,7 +943,7 @@ const JOBS = [
               "tenure": ">5",
               "role": "PhD Candidate",
               "locationCity": "Chicago",
-              "locationState": "IL"
+              "locationState": "IL",
           },
       ]
   },
@@ -941,6 +954,7 @@ const JOBS = [
     "website": "https://www.northwestern.edu/careers/",
     "rating": 4.1,
     "pay": "$11.00/hr",
+    "tags": ["Fisk Hall", "Undergrad", "SESP"],
     "hours": 6,
     "apply": null,
     "contact": "Taylor Kinn",
@@ -972,7 +986,7 @@ const JOBS = [
             "tenure": "<1",
             "role": "Career Advisor",
             "locationCity": "Evanston",
-            "locationState": "IL"
+            "locationState": "IL",
         },
 
         {
@@ -996,7 +1010,7 @@ const JOBS = [
             "tenure": ">5",
             "role": "Career Ambassador",
             "locationCity": "Evanston",
-            "locationState": "IL"
+            "locationState": "IL",
         },
     ]
   },
