@@ -1,6 +1,30 @@
 import React, { Component } from 'react';
 import JobContainer from './JobContainer';
 
+function tagsContain(tagsArray,terms){
+  for(var i = 0; i<tagsArray.length; i++){
+    if(terms.includes(tagsArray[i].toLowerCase())) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function searchContains(title, description, terms){
+  title = title.toLowerCase();
+  description = description.toLowerCase();
+  var termArray = terms.toLowerCase().split(' ');
+  if (termArray.length == 0){
+    return false;
+  }
+  for(var i = 0; i<termArray.length; i++){
+    if((!title.includes(termArray[i]))&&(!description.includes(termArray[i]))){
+      return false;
+    }
+  }
+  return true;
+}
+
 class HomeScreen extends Component {
   constructor(props) {
     super(props);
@@ -10,13 +34,17 @@ class HomeScreen extends Component {
   filterJobs = () => {
       let terms = document.getElementById("searchTerms").value.toLowerCase();
       if (terms) {
-          let filtered = this.props.jobs.filter(job => (job.description.toLowerCase().includes(terms)||job.title.toLowerCase().includes(terms)));
+          let filtered = this.props.jobs.filter(
+            job => (job.description.toLowerCase().includes(terms)
+                    ||job.title.toLowerCase().includes(terms)
+                    ||searchContains(job.title,job.description,terms)
+                    ||tagsContain(job.tags,terms)
+                   ));
           this.setState({jobList: filtered.slice()});
       } else {
           this.setState({jobList: this.props.jobs.slice()});;
       }
   }
-
   render() {
     return (
       <div>
