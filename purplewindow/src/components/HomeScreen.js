@@ -12,7 +12,6 @@ class HomeScreen extends Component {
       if (terms) {
           let filtered = this.props.jobs.filter(job => (job.description.toLowerCase().includes(terms)||job.title.toLowerCase().includes(terms)));
           this.setState({jobList: filtered.slice()});
-          console.log(this.state.jobList);
       } else {
           this.setState({jobList: this.props.jobs.slice()});;
       }
@@ -25,11 +24,11 @@ class HomeScreen extends Component {
           <p className={"headerText"}>Purple Window</p>
         </div>
         <div className={"searchContainer"}>
-          <input className={"searchBox"} placeHolder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
+          <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
         </div>
         {
           this.state.jobList.map((j, i) => {
-            return <JobContainer key={i} title={j.title} rating={j.rating} pay={j.pay} description={j.description} selectJob={e => this.props.selectJob(j)} />
+            return <JobContainer key={i} title={j.title} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(j)} />
           })
         }
       </div>
