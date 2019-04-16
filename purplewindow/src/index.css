@@ -117,10 +117,15 @@ html {
   width: 100%;
 }
 
+<<<<<<< HEAD
+.seeMore {
+  color: gray;
+=======
 .tagText {
   margin-top: 5px;
   font-family: 'Raleway';
   color: #ffffff;
+>>>>>>> master
 }
 
 @media only screen and (max-width: 620px) {

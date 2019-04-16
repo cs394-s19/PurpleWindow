@@ -4,6 +4,7 @@ const MAX_DESC_LENGTH = 130;
 class JobContainer extends Component {
   constructor(props) {
     super(props);
+    this.state = { showText: false };
   }
 
   render() {
@@ -17,11 +18,24 @@ class JobContainer extends Component {
           </div>
           <div style={{clear: 'both'}}></div>
         </div>
+
         <p className={"payText"}>{this.props.pay}</p>
         {
           this.props.description.length > MAX_DESC_LENGTH ?
           (
-            <p>{this.props.description.substring(0, MAX_DESC_LENGTH) + "..."}</p>
+            <div>
+              <p>{this.props.description.substring(0, MAX_DESC_LENGTH)}
+              { this.state.showText ?
+                (<span>
+                  <span>{this.props.description.substring(MAX_DESC_LENGTH)}
+                    <a onClick={() => this.setState({ showText: !this.state.showText })} className={"seeMore"}> See less...</a>
+                  </span>
+                </span>)
+                :
+                (<a onClick={() => this.setState({ showText: !this.state.showText })} className={"seeMore"}> See more... </a>)
+              }
+              </p>
+            </div>
           ) : (
             <p>{this.props.description}</p>
           )
