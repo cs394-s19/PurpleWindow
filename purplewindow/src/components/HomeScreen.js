@@ -5,6 +5,7 @@ class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {jobList: this.props.jobs.slice()};
+    this.toggle = this.toggle.bind(this);
   }
 
   filterJobs = () => {
@@ -17,6 +18,10 @@ class HomeScreen extends Component {
       }
   }
 
+  toggle() {
+      document.getElementById("dropdown").classList.toggle("show");
+  }
+
   render() {
     return (
       <div>
@@ -26,6 +31,14 @@ class HomeScreen extends Component {
         <div className={"searchContainer"}>
           <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
         </div>
+          <div className={"filterContainer"}>
+              <p onClick={this.toggle} className={"dropBtn"}>Filter <i className="fas fa-angle-down"></i></p>
+              <div id={"dropdown"} className={"dropContent"}>
+                  Info
+                  Some more Info
+                  Some more 
+              </div>
+          </div>
         {
           this.state.jobList.map((j, i) => {
             return <JobContainer key={i} title={j.title} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(j)} />
