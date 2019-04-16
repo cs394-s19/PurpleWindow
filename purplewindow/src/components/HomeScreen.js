@@ -26,14 +26,12 @@ class HomeScreen extends Component {
     if (rank == "Ratings") {
       let output = [...this.state.jobList];
       output.sort(function(a, b){return b.rating - a.rating});
-      console.log(output);
       this.setState({ranked: true, jobList: output});
     } else {
       this.setState({
         ranked: false, jobList: this.props.jobs.slice()
       });
     } 
-    console.log('state of homescreen: ', this.state)
   }
 
   render() {

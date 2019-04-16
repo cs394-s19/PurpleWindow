@@ -28,22 +28,18 @@ class RankDropDownButton extends Component {
     let clicked = e.target.id;
 
     if (clicked == 'None') {
-      console.log('None was clicked');
       this.setState({
         rankJobs: false,
         value: "None"
       });
     }
     else if (clicked == 'Ratings') {
-      console.log('Ratings was clicked');
       this.setState({
         rankJobs: true,
         value: "Ratings"
       });
-      console.log('value of rankJob', this.state);
     }
 
-    // console.log('value of rankJob', this.state);
     this.props.isRankedByWhat(clicked);
 
   }
