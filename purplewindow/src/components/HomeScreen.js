@@ -30,15 +30,12 @@ function searchContains(title, description, terms){
 class HomeScreen extends Component {
   constructor(props) {
     super(props);
-<<<<<<< HEAD
     this.state = {jobList: this.props.jobs.slice()};
     this.toggle = this.toggle.bind(this);
-=======
     this.state = {
       jobList: this.props.jobs.slice(),
       ranked: true
     };
->>>>>>> eb732c160d6e8a0a8c943a4fba33681bc957b71b
   }
 
   filterJobs = () => {
@@ -52,14 +49,13 @@ class HomeScreen extends Component {
                    ));
           this.setState({jobList: filtered.slice()});
       } else {
-          this.setState({jobList: this.props.jobs.slice()});;
+          this.setState({jobList: this.props.jobs.slice()});
       }
   }
 
-<<<<<<< HEAD
   toggle() {
       document.getElementById("dropdown").classList.toggle("show");
-=======
+  }
   isRankedByWhat = (rank) => {
     if (rank == "Ratings") {
       let output = [...this.state.jobList];
@@ -70,8 +66,8 @@ class HomeScreen extends Component {
         ranked: false, jobList: this.props.jobs.slice()
       });
     } 
->>>>>>> eb732c160d6e8a0a8c943a4fba33681bc957b71b
   }
+
 
   render() {
     // let output = [...this.state.jobList];
@@ -86,7 +82,6 @@ class HomeScreen extends Component {
         <div className={"searchContainer"}>
           <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
         </div>
-<<<<<<< HEAD
           <div className={"filterContainer"}>
               <p onClick={this.toggle} className={"dropBtn"}>Filter <i className="fas fa-angle-down"></i></p>
               <div id={"dropdown"} className={"dropContent"}>
@@ -95,9 +90,7 @@ class HomeScreen extends Component {
                   Some more 
               </div>
           </div>
-=======
         <RankDropDownButton isRankedByWhat={this.isRankedByWhat}/>
->>>>>>> eb732c160d6e8a0a8c943a4fba33681bc957b71b
         {
           this.state.jobList.map((j, i) => {
             return <JobContainer key={i} title={j.title} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(j)} />
@@ -108,5 +101,6 @@ class HomeScreen extends Component {
     );
   }
 }
+
 
 export default HomeScreen;
