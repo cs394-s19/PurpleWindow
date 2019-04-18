@@ -26,8 +26,8 @@ class ReviewForm extends Component {
   }
 
   handleSubmit(event) {
-    alert('Thank you for you review of ' + this.props.job.title);
     event.preventDefault();
+    alert('Thank you for you review of ' + this.props.job.title);
 
     // Do some DB stuff with firebase
   }
@@ -45,7 +45,7 @@ class ReviewForm extends Component {
           </div>
           <div style={{width: "100%", height: 1, backgroundColor: "#3e3e3e", opacity: "0.2"}}></div>
           <p className={"jobTitleText2"} style={{cursor: 'default'}}><b>Review {this.props.job.title}</b></p>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <label>
               Title: <input name="title" type="text" value={this.state.title} onChange={this.handleInputChange} />
             </label>
