@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HomeScreen from './components/HomeScreen';
 import JobScreen from './components/JobScreen';
+import ReviewForm from './components/ReviewForm';
 import logo from './logo.svg';
 import './App.css';
 
@@ -1030,6 +1031,10 @@ class App extends Component {
     this.setState({currentPageIndex: 1, currentSelectedJob: job});
   }
 
+  selectReviewJob = (job) => {
+    this.setState({currentPageIndex: 2, currentSelectedJob: job});
+  }
+
   goBack = () => {
     this.setState({currentPageIndex: 0, currentSelectedJob: {}});
   }
@@ -1039,7 +1044,9 @@ class App extends Component {
       case 0:
         return <HomeScreen selectJob={this.selectJob} jobs={JOBS} />
       case 1:
-        return <JobScreen job={this.state.currentSelectedJob} selectJob={this.selectJob} goBack={this.goBack}/>
+        return <JobScreen job={this.state.currentSelectedJob} selectJob={this.selectJob} goBack={this.goBack} selectReviewJob={this.selectReviewJob}/>
+      case 2:
+        return <ReviewForm job={this.state.currentSelectedJob} goBack={this.goBack}/>
       default:
         return <HomeScreen selectJob={this.selectJob} jobs={JOBS} />
     }
