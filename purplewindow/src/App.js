@@ -5,6 +5,19 @@ import ReviewForm from './components/ReviewForm';
 import logo from './logo.svg';
 import './App.css';
 
+var firebase = require("firebase-admin");
+
+// Initialize Firebase
+var firebaseConfig = {
+  apiKey: "AIzaSyD26AQhzl73lJeBzGZ4EsSOKcpICv2FA1o",
+  authDomain: "purplewindow-3acf0.firebaseapp.com",
+  databaseURL: "https://purplewindow-3acf0.firebaseio.com",
+  projectId: "purplewindow-3acf0",
+  storageBucket: "purplewindow-3acf0.appspot.com",
+  messagingSenderId: "794968149806"
+};
+firebase.initializeApp(firebaseConfig);
+
 const JOBS = [
   {
       "title": "Education and Social Policy Research Aide",

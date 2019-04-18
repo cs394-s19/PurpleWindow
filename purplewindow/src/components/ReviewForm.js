@@ -10,6 +10,7 @@ class ReviewForm extends Component {
       cons: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInputChange(event) {
@@ -28,11 +29,7 @@ class ReviewForm extends Component {
     alert('Thank you for you review of ' + this.props.job.title);
     event.preventDefault();
 
-    newReview();
-  }
-
-  newReview() {
-    // DO some database stuff for a new review.
+    // Do some DB stuff with firebase
   }
 
   render() {
