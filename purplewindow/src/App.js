@@ -1036,7 +1036,7 @@ class App extends Component {
   }
 
   goBack = () => {
-    this.setState({currentPageIndex: 0, currentSelectedJob: {}});
+    this.setState({currentPageIndex: this.state.currentPageIndex-1});
   }
 
   render() {
