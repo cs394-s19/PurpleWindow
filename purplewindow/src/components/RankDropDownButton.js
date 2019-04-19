@@ -5,7 +5,6 @@ class RankDropDownButton extends Component {
     super(props);
 
     this.state = {
-      value: "None",
       displayMenu: false,
     }
   }
@@ -24,27 +23,7 @@ class RankDropDownButton extends Component {
   }
 
   handleOptionClick = (e) => {
-    let clicked = e.target.id;
-
-    if (clicked == 'None') {
-      this.setState({
-        value: "None"
-      });
-    }
-    else if (clicked == 'Ratings') {
-      this.setState({
-        value: "Ratings"
-      });
-    }
-
-    else if (clicked == '"Hourly Wages (Minimum)"'){
-      this.setState({
-        value: "Hourly Wages (Minimum)"
-      })
-    }
-
-    this.props.isRankedByWhat(clicked);
-
+    this.props.isRankedByWhat(e.target.id);
   }
  
   render() {

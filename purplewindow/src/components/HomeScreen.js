@@ -28,16 +28,12 @@ function searchContains(title, description, terms){
 }
 
 class HomeScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {jobList: this.props.jobs.slice()};
-    this.toggle = this.toggle.bind(this);
-    this.state = {
+    state = {
       jobList: this.props.jobs.slice(),
-    };
-  }
+      filters: {}
+    }
 
-  filterJobs = () => {
+  filterJobsBySearch = () => {
       let terms = document.getElementById("searchTerms").value.toLowerCase();
       if (terms) {
           let filtered = this.props.jobs.filter(
@@ -82,6 +78,24 @@ class HomeScreen extends Component {
     } 
   }
 
+  filterJobsByButtons = (e) => {
+    let newFilters = JSON.parse(JSON.stringify(this.state.filters));
+    if (newFilters[e.target.name] === undefined){
+        newFilters[e.target.name] = [];
+        newFilters[e.target.name].push(e.target.value);
+    }
+    
+    else if (newFilters[e.target.name].includes(e.target.value) === false){
+        newFilters[e.target.name].push(e.target.value);
+    }
+
+    this.setState({
+        filters: newFilters
+    })
+
+    console.log(newFilters);
+  }
+
 
   render() {
     return (
@@ -92,16 +106,7 @@ class HomeScreen extends Component {
         <div className={"searchContainer"}>
           <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
         </div>
-          {/* <div className={"filterContainer"}>
-              <p onClick={this.toggle} className={"dropBtn"}>Filter <i className="fas fa-angle-down"></i></p>
-              <div id={"dropdown"} className={"dropContent"}>
-                  Info
-                  Some more Info
-                  Some more 
-              </div>
-          </div>
-        <div>blank space</div> */}
-        <FilterButton onClick={this.toggle2} className="dropBtn"/>
+        <FilterButton onClick={this.toggle2} className="dropBtn" filterJobsByButtons={this.filterJobsByButtons}/>
         <RankDropDownButton isRankedByWhat={this.isRankedByWhat}/>
         {
           this.state.jobList.map((j, i) => {
