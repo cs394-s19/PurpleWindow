@@ -34,6 +34,7 @@ class ReviewForm extends Component {
     alert('Thank you for your review of ' + this.props.job.title);
 
     // Create new review object
+    //justin checking if he is at the head 
     const timestamp = (new Date()).getTime();
     const newReview = {
       title: this.state.title,

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Review from './Review';
 import ReviewForm from './ReviewForm';
+
 class JobScreen extends Component {
   constructor(props) {
     super(props);
   }
-
-
 
   render() {
       function contactAlert() {
