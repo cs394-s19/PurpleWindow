@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import JobContainer from './JobContainer';
 import RankDropDownButton from './RankDropDownButton';
-import SortStateContainer from './SortStateContainer';
 
 function tagsContain(tagsArray,terms){
   for(var i = 0; i<tagsArray.length; i++){
@@ -16,7 +15,7 @@ function searchContains(title, description, terms){
   title = title.toLowerCase();
   description = description.toLowerCase();
   var termArray = terms.toLowerCase().split(' ');
-  if (termArray.length == 0){
+  if (termArray.length === 0){
     return false;
   }
   for(var i = 0; i<termArray.length; i++){
@@ -56,24 +55,31 @@ class HomeScreen extends Component {
   toggle() {
       document.getElementById("dropdown").classList.toggle("show");
   }
-  isRankedByWhat = (rank) => {
-    if (rank == "Ratings") {
+
+  isRankedByWhat = (rankCriteria) => {
+    if (rankCriteria === "Ratings") {
       let output = [...this.state.jobList];
       output.sort(function(a, b){return b.rating - a.rating});
       this.setState({ranked: true, jobList: output});
-    } else {
+    } 
+    
+    else if (rankCriteria === "Hourly Wages (Minimum)") {
+      let output = [...this.state.jobList];
+      output.sort((a,b) => {
+        return (b.pay.slice(1,6) - a.pay.slice(1,6))
+      })
+      this.setState({ranked: true, jobList: output})
+    }
+
+    else {
       this.setState({
-        ranked: false, jobList: this.props.jobs.slice()
+        ranked: true, jobList: this.props.jobs.slice()
       });
     } 
   }
 
 
   render() {
-    // let output = [...this.state.jobList];
-    // if (this.state.ranked) {
-    //   output.sort(function(a, b){return b.rating - a.rating});
-    // }
     return (
       <div>
         <div className={"headerContainer"}>

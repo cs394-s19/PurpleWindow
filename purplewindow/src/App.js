@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import HomeScreen from './components/HomeScreen';
 import JobScreen from './components/JobScreen';
-import logo from './logo.svg';
 import './App.css';
 
 const JOBS = [
