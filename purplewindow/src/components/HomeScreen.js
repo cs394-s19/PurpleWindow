@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JobContainer from './JobContainer';
 import RankDropDownButton from './RankDropDownButton';
+import FilterButton from './FilterButton';
 
 function tagsContain(tagsArray,terms){
   for(var i = 0; i<tagsArray.length; i++){
@@ -33,7 +34,6 @@ class HomeScreen extends Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       jobList: this.props.jobs.slice(),
-      ranked: true
     };
   }
 
@@ -52,15 +52,19 @@ class HomeScreen extends Component {
       }
   }
 
-  toggle() {
+  toggle = () => {
       document.getElementById("dropdown").classList.toggle("show");
+  }
+
+  toggle2 = (e) => {
+    document.getElementById("dropdown2").classList.toggle("show");
   }
 
   isRankedByWhat = (rankCriteria) => {
     if (rankCriteria === "Ratings") {
       let output = [...this.state.jobList];
       output.sort(function(a, b){return b.rating - a.rating});
-      this.setState({ranked: true, jobList: output});
+      this.setState({jobList: output});
     } 
     
     else if (rankCriteria === "Hourly Wages (Minimum)") {
@@ -68,12 +72,12 @@ class HomeScreen extends Component {
       output.sort((a,b) => {
         return (b.pay.slice(1,6) - a.pay.slice(1,6))
       })
-      this.setState({ranked: true, jobList: output})
+      this.setState({jobList: output})
     }
 
     else {
       this.setState({
-        ranked: true, jobList: this.props.jobs.slice()
+        jobList: this.props.jobs.slice()
       });
     } 
   }
@@ -88,7 +92,7 @@ class HomeScreen extends Component {
         <div className={"searchContainer"}>
           <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
         </div>
-          <div className={"filterContainer"}>
+          {/* <div className={"filterContainer"}>
               <p onClick={this.toggle} className={"dropBtn"}>Filter <i className="fas fa-angle-down"></i></p>
               <div id={"dropdown"} className={"dropContent"}>
                   Info
@@ -96,6 +100,8 @@ class HomeScreen extends Component {
                   Some more 
               </div>
           </div>
+        <div>blank space</div> */}
+        <FilterButton onClick={this.toggle2} className="dropBtn"/>
         <RankDropDownButton isRankedByWhat={this.isRankedByWhat}/>
         {
           this.state.jobList.map((j, i) => {
