@@ -149,7 +149,7 @@ const JOBS = [
       "website": "https://www.mccormick.northwestern.edu/",
       "rating": 3.8,
       "pay": "$12.25/hr",
-      "tags": ["Fisk Hall", "Undergrad", "SESP"],
+      "tags": ["Fisk Hall", "Graduate", "SESP"],
       "hours": null,
       "apply": null,
       "contact": "Eric Masanet",

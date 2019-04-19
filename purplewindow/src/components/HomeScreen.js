@@ -30,7 +30,9 @@ function searchContains(title, description, terms){
 class HomeScreen extends Component {
     state = {
       jobList: this.props.jobs.slice(),
-      filters: {}
+      filters: {
+
+      }
     }
 
   filterJobsBySearch = () => {
@@ -93,7 +95,31 @@ class HomeScreen extends Component {
         filters: newFilters
     })
 
+    let filtered = this.props.jobs.filter(
+      job => {this.checkFilters(newFilters,job)}
+    )
+
     console.log(newFilters);
+  }
+
+  checkFilters = (filters, job) => {
+    for (let category in filters){
+      console.log(category)
+      if (category.constructor === Array){
+        let included = category.every((value) => job[category].includes(value))
+        if (included === false){
+          return false 
+        }
+      }
+      else {
+        if (category !== job[category]){
+          return false 
+        }
+      }
+
+    }
+
+    return true 
   }
 
 
