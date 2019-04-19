@@ -1,23 +1,27 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
+
 
 class ReviewForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: '',
-      recommend: true,
       pros: '',
-      cons: ''
+      cons: '',
+      total: 0,
+      recommend: true,
+      employee: false,
+      flexible: false,
     };
+
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInputChange(event) {
     const target = event.target;
-
-    // Grab the value/checked of the form element
-    const value = target.type === "checked" ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
@@ -27,9 +31,40 @@ class ReviewForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    alert('Thank you for you review of ' + this.props.job.title);
+    alert('Thank you for your review of ' + this.props.job.title);
 
-    // Do some DB stuff with firebase
+    // Create new review object
+    const timestamp = (new Date()).getTime();
+    const newReview = {
+      title: this.state.title,
+      pros: this.state.pros,
+      cons: this.state.cons,
+      recommend: this.state.recommend,
+      currentEmployee: this.state.employee,
+      flexible: this.state.flexible,
+      date: timestamp
+    }
+
+    // Connect to firebase DB and update our Job object.
+    var ref = firebase.app().database().ref();
+    var jobRef = ref.child('jobs').child(this.props.jobNo);
+    jobRef.once('value')
+     .then(function (snapshot) {
+
+       // Get all reviews from job and add in new one.
+       var revs = snapshot.val()["reviews"];
+       revs.push(newReview);
+
+       // Update reviews array for this specific job.
+       jobRef.update({
+         'reviews': revs
+       }).catch(function(err) {
+         console.log("Update Reviews for " + [this.props.job.title] + " failed.");
+       }).then(function(val) {
+         this.props.goBack();
+       }.bind(this));
+
+     }.bind(this));
   }
 
   render() {
@@ -48,20 +83,28 @@ class ReviewForm extends Component {
           <form onSubmit={this.handleSubmit}>
             <label>
               Title: <input name="title" type="text" value={this.state.title} onChange={this.handleInputChange} />
-            </label>
-            <br />
+            </label> <br />
             <label>
               Pros: <input name="pros" type="text" value={this.state.pros} onChange={this.handleInputChange} />
-            </label>
-            <br />
+            </label> <br />
             <label>
               Cons: <input name="cons" type="text" value={this.state.cons} onChange={this.handleInputChange} />
-            </label>
-            <br />
+            </label> <br />
             <label>
-            Would you recommend?: <input name="recommend" type="checkbox" checked={this.state.isGoing} onChange={this.handleInputChange} />
-            </label>
-            <br />
+              Total (1-5): <input name="total" type="number" value={this.state.total} onChange={this.handleInputChange} />
+            </label> <br />
+            <label>
+              Are you a current employee?:
+              <input name="employee" type="checkbox" checked={this.state.employee} onChange={this.handleInputChange} />
+            </label> <br />
+            <label>
+              Was this job flexible?:
+              <input name="flexible" type="checkbox" checked={this.state.flexible} onChange={this.handleInputChange} />
+            </label> <br />
+            <label>
+              Would you recommend?:
+              <input name="recommend" type="checkbox" checked={this.state.recommend} onChange={this.handleInputChange} />
+            </label> <br />
             <input type="submit" value="Submit" />
           </form>
         </div>

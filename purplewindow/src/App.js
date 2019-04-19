@@ -5,7 +5,7 @@ import ReviewForm from './components/ReviewForm';
 import logo from './logo.svg';
 import './App.css';
 
-var firebase = require("firebase-admin");
+import firebase from 'firebase';
 
 // Initialize Firebase
 var firebaseConfig = {
@@ -17,6 +17,9 @@ var firebaseConfig = {
   messagingSenderId: "794968149806"
 };
 firebase.initializeApp(firebaseConfig);
+
+const db = firebase.database();
+// const ref = db.ref("purplewindow-3acf0");
 
 const JOBS = [
   {
@@ -1036,12 +1039,13 @@ class App extends Component {
     super(props);
     this.state = {
       currentPageIndex: 0,
-      currentSelectedJob: {}
+      currentSelectedJob: {},
+      currentJobNo: 0
     }
   }
 
-  selectJob = (job) => {
-    this.setState({currentPageIndex: 1, currentSelectedJob: job});
+  selectJob = (num, job) => {
+    this.setState({currentPageIndex: 1, currentSelectedJob: job, currentJobNo: num});
   }
 
   selectReviewJob = (job) => {
@@ -1057,9 +1061,9 @@ class App extends Component {
       case 0:
         return <HomeScreen selectJob={this.selectJob} jobs={JOBS} />
       case 1:
-        return <JobScreen job={this.state.currentSelectedJob} selectJob={this.selectJob} goBack={this.goBack} selectReviewJob={this.selectReviewJob}/>
+        return <JobScreen job={this.state.currentSelectedJob} goBack={this.goBack} selectReviewJob={this.selectReviewJob}/>
       case 2:
-        return <ReviewForm job={this.state.currentSelectedJob} goBack={this.goBack}/>
+        return <ReviewForm job={this.state.currentSelectedJob} goBack={this.goBack} jobNo={this.state.currentJobNo}/>
       default:
         return <HomeScreen selectJob={this.selectJob} jobs={JOBS} />
     }

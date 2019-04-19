@@ -43,7 +43,7 @@ class JobScreen extends Component {
             </span>
           </p>
           <div style={{width: "100%", height: 1, backgroundColor: "#3e3e3e", opacity: "0.2"}}></div>
-          <Review reviewDetails={this.props} index={0}/>
+          <Review reviewDetails={this.props} index={0} />
         </div>
         {/*
         <button onClick={() => this.props.goBack()}>Jobs</button>
