@@ -3,10 +3,17 @@ import JobContainer from './JobContainer';
 import RankDropDownButton from './RankDropDownButton';
 import SortStateContainer from './SortStateContainer';
 
-function tagsContain(tagsArray,terms){
+function tagsContain(tagsArray,termsArray){
   for(var i = 0; i<tagsArray.length; i++){
-    if(terms.includes(tagsArray[i].toLowerCase())) {
-      return true;
+    for(var j = 0; j<termsArray.length; j++){
+      var tag = tagsArray[i].toLowerCase().trim();
+      var term = termsArray[j].toLowerCase().trim();
+      if(tag.includes(term)
+        && term.length > 0) {
+        console.log(tagsArray[i].trim().length);
+        console.log(termsArray[j].trim().length);
+        return true;
+      }
     }
   }
   return false;
@@ -45,7 +52,7 @@ class HomeScreen extends Component {
             job => (job.description.toLowerCase().includes(terms)
                     ||job.title.toLowerCase().includes(terms)
                     ||searchContains(job.title,job.description,terms)
-                    ||tagsContain(job.tags,terms)
+                    ||tagsContain(job.tags,terms.split(" "))
                    ));
           this.setState({jobList: filtered.slice()});
       } else {
