@@ -80,9 +80,20 @@ class HomeScreen extends Component {
     } 
   }
 
+  isChecked = (e) => {
+    let checked = document.getElementById(e.target.id);
+    return checked.checked
+  }
+
   filterJobsByButtons = (e) => {
+    console.log(e.target);
     let newFilters = JSON.parse(JSON.stringify(this.state.filters));
-    if (newFilters[e.target.name] === undefined){
+
+    if (!this.isChecked(e)) {
+      newFilters[e.target.name].pop(e.target.value);
+    }
+
+    else if (newFilters[e.target.name] === undefined){
         newFilters[e.target.name] = [];
         newFilters[e.target.name].push(e.target.value);
     }
@@ -104,7 +115,6 @@ class HomeScreen extends Component {
 
   checkFilters = (filters, job) => {
     for (let category in filters){
-      console.log(category)
       if (category.constructor === Array){
         let included = category.every((value) => job[category].includes(value))
         if (included === false){
