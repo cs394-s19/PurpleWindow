@@ -86,7 +86,6 @@ class HomeScreen extends Component {
   }
 
   filterJobsByButtons = (e) => {
-    console.log(e.target);
     let newFilters = JSON.parse(JSON.stringify(this.state.filters));
 
     if (!this.isChecked(e)) {
@@ -111,17 +110,21 @@ class HomeScreen extends Component {
     )
 
     console.log(newFilters);
+    console.log(filtered);
   }
 
   checkFilters = (filters, job) => {
-    for (let category in filters){
+    for (let category in filters){ 
+      console.log(typeof(category));
       if (category.constructor === Array){
+        console.log('category is array');
         let included = category.every((value) => job[category].includes(value))
         if (included === false){
           return false 
         }
       }
       else {
+        console.log('category is not an array');
         if (category !== job[category]){
           return false 
         }
