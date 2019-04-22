@@ -43,24 +43,18 @@ class RankDropDownButton extends Component {
     this.props.isRankedByWhat(clicked);
 
   }
- 
+
   render() {
     return (
       <div>
-        <div className="button" style = {{background:"purple",width:"200px"}} onClick={(e) => {this.showDropdownMenu(e)}}> Options </div>
-        {
-          this.state.displayMenu ? (
-            <ul>
-              <li><p id="None" onClick={(e) => {this.handleOptionClick(e)}}>None</p></li>
-              <li><p id="Ratings" onClick={(e) => {this.handleOptionClick(e)}}>Ratings</p></li>
-            </ul>
-            ) : (
-              null
-            )
-        }
+        <div className={"filterHeader"} onClick={(e) => {this.showDropdownMenu(e)}}>Sort by:</div>
+        <ul>
+          <li><p id="None" onClick={(e) => {this.handleOptionClick(e)}}>None</p></li>
+          <li><p id="Ratings" onClick={(e) => {this.handleOptionClick(e)}}>Ratings</p></li>
+        </ul>
       </div>
     )
   }
 }
-  
+
 export default RankDropDownButton;

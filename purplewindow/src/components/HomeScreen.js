@@ -65,7 +65,7 @@ class HomeScreen extends Component {
       this.setState({
         ranked: false, jobList: this.props.jobs.slice()
       });
-    } 
+    }
   }
 
 
@@ -85,18 +85,23 @@ class HomeScreen extends Component {
           <div className={"filterContainer"}>
               <p onClick={this.toggle} className={"dropBtn"}>Filter <i className="fas fa-angle-down"></i></p>
               <div id={"dropdown"} className={"dropContent"}>
+                <div id={"filter"}>
                   Info
                   Some more Info
-                  Some more 
+                  Some more
+                </div>
+                <br></br>
+                <div id={"sort"}>
+                  <RankDropDownButton isRankedByWhat={this.isRankedByWhat}/>
+                </div>
               </div>
           </div>
-        <RankDropDownButton isRankedByWhat={this.isRankedByWhat}/>
         {
           this.state.jobList.map((j, i) => {
             return <JobContainer key={i} title={j.title} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(j)} />
           })
         }
-        
+
       </div>
     );
   }
