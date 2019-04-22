@@ -98,7 +98,7 @@ class HomeScreen extends Component {
           </div>
         {
           this.state.jobList.map((j, i) => {
-            return <JobContainer key={i} title={j.title} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(j)} />
+            return <JobContainer key={i} title={j.title} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(i, j)} />
           })
         }
 

@@ -157,9 +157,14 @@ html {
   color: #ffffff;
 }
 
+<<<<<<< HEAD
 .filterHeader {
   color: #8e28c9;
   font-family: 'Raleway';
+=======
+.sectionText {
+  font-size: 20px;
+>>>>>>> 93e365689f1cd5ec21d7c19a8020ba8ecf03443b
 }
 
 @media only screen and (max-width: 620px) {
