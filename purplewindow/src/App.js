@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import HomeScreen from './components/HomeScreen';
 import JobScreen from './components/JobScreen';
-<<<<<<< HEAD
-=======
 import ReviewForm from './components/ReviewForm';
-import logo from './logo.svg';
->>>>>>> c5c90005cda146e53e2d2e8cbced1386d6e71575
 import './App.css';
 
 import firebase from 'firebase';

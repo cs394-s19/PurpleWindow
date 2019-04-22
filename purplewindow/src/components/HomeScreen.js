@@ -152,18 +152,7 @@ class HomeScreen extends Component {
         <div className={"searchContainer"}>
           <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
         </div>
-<<<<<<< HEAD
         <FilterButton onClick={this.toggle2} className="dropBtn" filterJobsByButtons={this.filterJobsByButtons}/>
-=======
-          <div className={"filterContainer"}>
-              <p onClick={this.toggle} className={"dropBtn"}>Filter <i className="fas fa-angle-down"></i></p>
-              <div id={"dropdown"} className={"dropContent"}>
-                  Info
-                  Some more Info
-                  Some more
-              </div>
-          </div>
->>>>>>> c5c90005cda146e53e2d2e8cbced1386d6e71575
         <RankDropDownButton isRankedByWhat={this.isRankedByWhat}/>
         {
           this.state.jobList.map((j, i) => {
