@@ -7,6 +7,9 @@ class JobScreen extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
   render() {
       function contactAlert() {
         alert("You have contacted the company.");
