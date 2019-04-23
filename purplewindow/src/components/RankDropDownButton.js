@@ -40,6 +40,18 @@ class RankDropDownButton extends Component {
         value: "Ratings"
       });
     }
+    else if (clicked == 'Pay') {
+      this.setState({
+        rankJobs: true,
+        value: "Pay"
+      });
+    }
+    else if (clicked == 'Recent') {
+      this.setState({
+        rankJobs: true,
+        value: "Recent"
+      });
+    }
 
     this.props.isRankedByWhat(clicked);
 
@@ -52,7 +64,7 @@ class RankDropDownButton extends Component {
         <div style={{display: 'flex', marginTop: 5}}>
           {
             this.state.value == 'Default' ? (
-              <div style={{backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center'}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center'}}>
                 <p style={{color: '#ffffff', margin: '0 auto', marginTop: 4}} id="Default" onClick={(e) => {this.handleOptionClick(e)}}>Default</p>
               </div>
             ) : (
@@ -64,7 +76,7 @@ class RankDropDownButton extends Component {
 
           {
             this.state.value == 'Ratings' ? (
-              <div style={{backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', marginLeft: 10}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', marginLeft: 10}}>
                 <p style={{color: '#ffffff', margin: '0 auto', marginTop: 4}} id="Ratings" onClick={(e) => {this.handleOptionClick(e)}}>Ratings</p>
               </div>
             ) : (
@@ -76,7 +88,7 @@ class RankDropDownButton extends Component {
 
           {
             this.state.value == 'Pay' ? (
-              <div style={{backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', marginLeft: 10}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', marginLeft: 10}}>
                 <p style={{color: '#ffffff', margin: '0 auto', marginTop: 4}} id="Pay" onClick={(e) => {this.handleOptionClick(e)}}>pay</p>
               </div>
             ) : (
@@ -91,7 +103,7 @@ class RankDropDownButton extends Component {
         <div style={{display: 'flex', marginTop: 5}}>
           {
             this.state.value == 'Recent' ? (
-              <div style={{backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center'}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center'}}>
                 <p style={{color: '#ffffff', margin: '0 auto', marginTop: 4}} id="Recent" onClick={(e) => {this.handleOptionClick(e)}}>Recent</p>
               </div>
             ) : (

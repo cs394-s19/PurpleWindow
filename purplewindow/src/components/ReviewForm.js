@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 
-
 class ReviewForm extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +33,7 @@ class ReviewForm extends Component {
     alert('Thank you for your review of ' + this.props.job.title);
 
     // Create new review object
-    //justin checking if he is at the head 
+    //justin checking if he is at the head
     const timestamp = (new Date()).getTime();
     const newReview = {
       title: this.state.title,
@@ -72,7 +71,7 @@ class ReviewForm extends Component {
     return (
       <div>
         <div className={"headerContainer"}>
-          <p className={"headerText"}>Purple Window</p>
+          <p className={"headerText"} onClick={() => this.props.goHome()}>Purple Window</p>
         </div>
         <div style={{padding: 15}}>
           <div onClick={() => this.props.goBack()}>

@@ -20,6 +20,7 @@ html {
   background-color: #8e28c9;
   width: 100%;
   text-align: center;
+  display: inline-block;
 }
 
 .headerText {
@@ -28,6 +29,18 @@ html {
   margin: 0px auto;
   line-height: 3;
   font-weight: bolder;
+  display: inline-block;
+  margin-right: -30px;
+  cursor: pointer;
+}
+
+.profileIcon {
+  display: inline-block;
+  color: white;
+  float: right;
+  padding-top: 20px;
+  padding-right: 20px;
+  font-size: 20px;
 }
 
 .searchContainer {
@@ -56,6 +69,8 @@ html {
   border: none;
   cursor: pointer;
   margin: 0 auto;
+  text-decoration: none;
+  outline: none;
 }
 
 .dropdown {
@@ -83,6 +98,7 @@ html {
   margin: 0px auto;
   margin-top: 10px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .jobTitleText {
@@ -131,6 +147,7 @@ html {
 .backButtonText {
   color: #8e28c9;
   cursor: pointer;
+  margin-top: 0px;
 }
 
 .jobDepartment {
@@ -179,4 +196,62 @@ html {
     font-size: 18px;
     width: 210px;
   }
+}
+
+ /* Profile */
+.profilePicture {
+  font-size: 100px;
+  padding-top: 10px;
+  color: black;
+  text-align: center;
+}
+
+.nameContainer {
+  text-align: center;
+}
+
+.email {
+  margin-top: -10px
+}
+
+/* profile accordion */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.jobAccordion {
+  padding-top: 10px;
 }

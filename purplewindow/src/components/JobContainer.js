@@ -7,11 +7,15 @@ class JobContainer extends Component {
     this.state = { showText: false };
   }
 
+  parseDate = (stringDate) => {
+    return stringDate.substring(4, 6) + "/" + stringDate.substring(6, 8) + "/" + stringDate.substring(0, 4)
+  }
+
   render() {
     return (
-      <div className={"jobContainer"}>
+      <div className={"jobContainer"} onClick={() => this.props.selectJob()}>
         <div>
-            <div className={"jobTitleDiv"}><a className={"jobTitleText"} onClick={() => this.props.selectJob()}><b>{this.props.title}</b></a></div>
+            <div className={"jobTitleDiv"}><a className={"jobTitleText"}><b>{this.props.title}</b></a></div>
           <div className={"ratingContainer"} style={{float: 'right'}}>
             <img className="ratingStar"  src="./images/star-01.png" />
             <p className={"ratingText"}>{this.props.rating}</p>
@@ -20,6 +24,7 @@ class JobContainer extends Component {
         </div>
 
         <p className={"payText"}>{this.props.pay}</p>
+        <p className={"payText"}>{this.parseDate(this.props.date)}</p>
         {
           this.props.description.length > MAX_DESC_LENGTH ?
           (
