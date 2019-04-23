@@ -12,8 +12,8 @@ class FilterButton extends Component {
                         <input type="checkbox" id="oncampusfalse" name="onCampus" value={false} onChange={(e) => {this.props.filterJobsByButtons(e)}}/>Off-Campus<br />
                         <br/>
                         <b>Academic Requirements</b><br/>
-                        <input type="checkbox" id="undergrad" name="tags" value="undegrad" onChange={(e) => {this.props.filterJobsByButtons(e)}}/>Undergraduate<br />
-                        <input type="checkbox" id="grad" name="tags" value="graduate" onChange={(e) => {this.props.filterJobsByButtons(e)}}/>Graduate<br />
+                        <input type="checkbox" id="undergrad" name="tags" value="Undergrad" onChange={(e) => {this.props.filterJobsByButtons(e)}}/>Undergraduate<br />
+                        <input type="checkbox" id="grad" name="tags" value="Graduate" onChange={(e) => {this.props.filterJobsByButtons(e)}}/>Graduate<br />
                     </form>
                 </div>
             </div>

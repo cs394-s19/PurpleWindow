@@ -19,6 +19,12 @@ function tagsContain(tagsArray,termsArray){
   return false;
 }
 
+function booleanToString(boolInput){
+  return boolInput 
+    ? 'true'
+    : 'false';
+}
+
 function searchContains(title, description, terms){
   title = title.toLowerCase();
   description = description.toLowerCase();
@@ -96,7 +102,11 @@ class HomeScreen extends Component {
     let newFilters = JSON.parse(JSON.stringify(this.state.filters));
 
     if (!this.isChecked(e)) {
-      newFilters[e.target.name].pop(e.target.value);
+      e.target.value 
+        ? newFilters[e.target.name].shift()
+        : newFilters[e.target.name].pop();
+      //newFilters[e.target.name].pop(e.target.value);
+
     }
 
     else if (newFilters[e.target.name] === undefined){
@@ -113,33 +123,40 @@ class HomeScreen extends Component {
     })
 
     let filtered = this.props.jobs.filter(
-      job => {this.checkFilters(newFilters,job)}
+      job => this.checkFilters(newFilters,job)
     )
 
-    console.log(newFilters);
-    console.log(filtered);
+    this.setState({
+      jobList: filtered
+    })
+
   }
 
   checkFilters = (filters, job) => {
-    for (let category in filters){ 
-      console.log(typeof(category));
-      if (category.constructor === Array){
-        console.log('category is array');
-        let included = category.every((value) => job[category].includes(value))
+    let shouldInclude = true 
+
+    for (let category in filters){
+      console.log(filters[category], job[category]);
+
+      
+      if (Array.isArray(job[category])){
+        let included = filters[category].every((value) => job[category].includes(value))
+        // console.log('value of included is', included);
         if (included === false){
-          return false 
+          shouldInclude = false 
         }
       }
       else {
-        console.log('category is not an array');
-        if (category !== job[category]){
-          return false 
+        // console.log('filters[category] includes job[category]', filters[category].includes(job[category]))
+        if (!filters[category].includes(booleanToString(job[category]))){
+          shouldInclude = false  
         }
       }
 
     }
 
-    return true 
+    console.log('should be included', shouldInclude);
+    return shouldInclude;
   }
 
 
@@ -150,7 +167,7 @@ class HomeScreen extends Component {
           <p className={"headerText"}>Purple Window</p>
         </div>
         <div className={"searchContainer"}>
-          <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
+          <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobsBySearch} id={"searchTerms"}/>
         </div>
         <FilterButton onClick={this.toggle2} className="dropBtn" filterJobsByButtons={this.filterJobsByButtons}/>
         <RankDropDownButton isRankedByWhat={this.isRankedByWhat}/>
