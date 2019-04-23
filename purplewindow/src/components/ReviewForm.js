@@ -71,7 +71,7 @@ class ReviewForm extends Component {
     return (
       <div>
         <div className={"headerContainer"}>
-          <p className={"headerText"}>Purple Window</p>
+          <p className={"headerText"} onClick={() => this.props.goHome()}>Purple Window</p>
         </div>
         <div style={{padding: 15}}>
           <div onClick={() => this.props.goBack()}>

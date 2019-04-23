@@ -20,7 +20,7 @@ class ProfileScreen extends Component {
         return (
             <div>
                 <div className={"headerContainer"}>
-                    <p className={"headerText"}>Purple Window</p>
+                    <p className={"headerText"} onClick={() => this.props.goHome()}>Purple Window</p>
                     <i className={"fas fa-user profileIcon"} onClick={() => this.props.clickProfile()}></i>
                 </div>
                 <div style={{padding: 15}}>
