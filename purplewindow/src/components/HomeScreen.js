@@ -100,13 +100,10 @@ class HomeScreen extends Component {
 
   filterJobsByButtons = (e) => {
     let newFilters = JSON.parse(JSON.stringify(this.state.filters));
-
+    console.log(typeof(e.target.value));
     if (!this.isChecked(e)) {
-      e.target.value 
-        ? newFilters[e.target.name].shift()
-        : newFilters[e.target.name].pop();
-      //newFilters[e.target.name].pop(e.target.value);
-
+      let index = newFilters[e.target.name].indexOf(e.target.value);
+      newFilters[e.target.name].splice(index,1);
     }
 
     else if (newFilters[e.target.name] === undefined){
@@ -133,6 +130,7 @@ class HomeScreen extends Component {
   }
 
   checkFilters = (filters, job) => {
+    console.log('job is ', job['title']);
     let shouldInclude = true 
 
     for (let category in filters){
