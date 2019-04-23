@@ -98,6 +98,7 @@ class HomeScreen extends Component {
       <div>
         <div className={"headerContainer"}>
           <p className={"headerText"}>Purple Window</p>
+            <i className={"fas fa-user profileIcon"} onClick={() => this.props.clickProfile()}></i>
         </div>
         <div className={"searchContainer"}>
           <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>

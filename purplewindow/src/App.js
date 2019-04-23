@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import HomeScreen from './components/HomeScreen';
 import JobScreen from './components/JobScreen';
 import ReviewForm from './components/ReviewForm';
+import ProfileScreen from './components/ProfileScreen';
 import logo from './logo.svg';
 import './App.css';
 import firebase from 'firebase';
 
 // Initialize Firebase
 var firebaseConfig = {
-  apiKey: "AIzaSyD26AQhzl73lJeBzGZ4EsSOKcpICv2FA1o",
-  authDomain: "purplewindow-3acf0.firebaseapp.com",
-  databaseURL: "https://purplewindow-3acf0.firebaseio.com",
-  projectId: "purplewindow-3acf0",
-  storageBucket: "purplewindow-3acf0.appspot.com",
-  messagingSenderId: "794968149806"
+    apiKey: "AIzaSyD26AQhzl73lJeBzGZ4EsSOKcpICv2FA1o",
+    authDomain: "purplewindow-3acf0.firebaseapp.com",
+    databaseURL: "https://purplewindow-3acf0.firebaseio.com",
+    projectId: "purplewindow-3acf0",
+    storageBucket: "purplewindow-3acf0.appspot.com",
+    messagingSenderId: "794968149806"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -54,26 +55,34 @@ class App extends Component {
   }
 
   selectReviewJob = (job) => {
-    this.setState({currentPageIndex: 2, currentSelectedJob: job});
+      this.setState({currentPageIndex: 2, currentSelectedJob: job});
   }
 
-  goBack = () => {
-    this.setState({currentPageIndex: this.state.currentPageIndex-1});
-  }
+    goBack = () => {
+        this.setState({currentPageIndex: this.state.currentPageIndex - 1});
+    }
+
+    clickProfile = () => {
+        this.setState({currentPageIndex: 3});
+    }
 
   render() {
     if (this.state.jobs.length == 0) {
       return <div></div>;
     } else {
       switch (this.state.currentPageIndex) {
-        case 0:
-          return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} />
-        case 1:
-          return <JobScreen job={this.state.currentSelectedJob} goBack={this.goBack} selectReviewJob={this.selectReviewJob}/>
-        case 2:
-          return <ReviewForm job={this.state.currentSelectedJob} goBack={this.goBack} jobNo={this.state.currentJobNo}/>
-        default:
-          return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} />
+          case 0:
+              return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile}/>
+          case 1:
+              return <JobScreen job={this.state.currentSelectedJob} goBack={this.goBack}
+                                selectReviewJob={this.selectReviewJob} clickProfile={this.clickProfile}/>
+          case 2:
+              return <ReviewForm job={this.state.currentSelectedJob} goBack={this.goBack}
+                                 jobNo={this.state.currentJobNo}/>
+          case 3:
+              return <ProfileScreen goBack={this.goBack} />
+          default:
+              return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile}/>
       }
     }
   }
