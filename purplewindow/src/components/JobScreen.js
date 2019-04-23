@@ -15,6 +15,7 @@ class JobScreen extends Component {
       <div>
         <div className={"headerContainer"}>
           <p className={"headerText"}>Purple Window</p>
+          <i className={"fas fa-user profileIcon"} onClick={() => this.props.clickProfile()}></i>
         </div>
         <div style={{padding: 15}}>
           <div onClick={() => this.props.goBack()}>
