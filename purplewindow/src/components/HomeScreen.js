@@ -56,6 +56,7 @@ class HomeScreen extends Component {
   toggle() {
       document.getElementById("dropdown").classList.toggle("show");
   }
+  
   isRankedByWhat = (rank) => {
     if (rank == "Ratings") {
       let output = [...this.state.jobList];
