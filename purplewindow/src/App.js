@@ -3,7 +3,6 @@ import HomeScreen from './components/HomeScreen';
 import JobScreen from './components/JobScreen';
 import ReviewForm from './components/ReviewForm';
 import './App.css';
-
 import firebase from 'firebase';
 
 // Initialize Firebase

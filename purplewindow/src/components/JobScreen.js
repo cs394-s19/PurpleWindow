@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import Review from './Review';
 
 class JobScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
   render() {
       function contactAlert() {
         alert("You have contacted the company.");

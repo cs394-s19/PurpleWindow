@@ -157,6 +157,12 @@ html {
   color: #ffffff;
 }
 
+
+.filterHeader {
+  color: #8e28c9;
+  font-family: 'Raleway';
+}
+
 .sectionText {
   font-size: 20px;
 }
