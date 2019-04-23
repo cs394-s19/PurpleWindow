@@ -63,11 +63,23 @@ class HomeScreen extends Component {
   toggle() {
       document.getElementById("dropdown").classList.toggle("show");
   }
-  
+
+  parseDate = (stringDate) => {
+    return stringDate.substring(4, 6) + "/" + stringDate.substring(6, 8) + "/" + stringDate.substring(0, 4)
+  }
+
   isRankedByWhat = (rank) => {
     if (rank == "Ratings") {
       let output = [...this.state.jobList];
       output.sort(function(a, b){return b.rating - a.rating});
+      this.setState({ranked: true, jobList: output});
+    } else if (rank == "Pay") {
+      let output = [...this.state.jobList];
+      output.sort(function(a, b){return parseFloat(b.pay.replace("$", "").replace("/hr", "")) - parseFloat(a.pay.replace("$", "").replace("/hr", ""))});
+      this.setState({ranked: true, jobList: output});
+    } else if (rank == "Recent") {
+      let output = [...this.state.jobList];
+      output.sort((a, b) => {return new Date(this.parseDate(b.date)) - new Date(this.parseDate(a.date))});
       this.setState({ranked: true, jobList: output});
     } else {
       this.setState({
@@ -106,7 +118,7 @@ class HomeScreen extends Component {
           </div>
         {
           this.state.jobList.map((j, i) => {
-            return <JobContainer key={i} title={j.title} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(i, j)} />
+            return <JobContainer key={i} title={j.title} date={j.date} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(i, j)} />
           })
         }
 
