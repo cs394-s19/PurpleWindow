@@ -100,7 +100,7 @@ class HomeScreen extends Component {
 
   filterJobsByButtons = (e) => {
     let newFilters = JSON.parse(JSON.stringify(this.state.filters));
-    console.log(typeof(e.target.value));
+    
     if (!this.isChecked(e)) {
       let index = newFilters[e.target.name].indexOf(e.target.value);
       newFilters[e.target.name].splice(index,1);
@@ -133,10 +133,8 @@ class HomeScreen extends Component {
     let shouldInclude = true 
 
     for (let category in filters){
-      
       if (Array.isArray(job[category])){
         let included = filters[category].every((value) => job[category].includes(value))
-
         if (included === false){
           shouldInclude = false 
         }
