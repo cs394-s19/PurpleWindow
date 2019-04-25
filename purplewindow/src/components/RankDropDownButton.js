@@ -90,7 +90,7 @@ class RankDropDownButton extends Component {
           {
             this.state.value == 'Pay' ? (
               <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', marginLeft: 10}}>
-                <p style={{color: '#ffffff', margin: '0 auto', marginTop: 4}} id="Pay" onClick={(e) => {this.handleOptionClick(e)}}>pay</p>
+                <p style={{color: '#ffffff', margin: '0 auto', marginTop: 4}} id="Pay" onClick={(e) => {this.handleOptionClick(e)}}>Pay</p>
               </div>
             ) : (
               <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', width: 100, height: 30, textAlign: 'center', marginLeft: 10}}>
