@@ -10,21 +10,52 @@ class JobContainer extends Component {
   parseDate = (stringDate) => {
     return stringDate.substring(4, 6) + "/" + stringDate.substring(6, 8) + "/" + stringDate.substring(0, 4)
   }
+  
+  showPin = (user) => {
+      if (user && user.saved.indexOf(this.props.title) >= 0) {
+          return "./images/pin-full.png"
+      } else {
+          return "./images/pin-empty.png"
+      }
+  } // needs onClick to add / remove job from saved list
+  
+  listHours = (hoursText) => {
+      if (!(hoursText)) {
+          return "TBD"
+      } else if (String(hoursText).indexOf("hour") >= 0 || String(hoursText).indexOf("hr") >= 0) {
+          return hoursText
+      } else {
+          return hoursText + " hrs/week"
+      }
+  }
 
   render() {
     return (
       <div className={"jobContainer"} onClick={() => this.props.selectJob()}>
         <div>
-            <div className={"jobTitleDiv"}><a className={"jobTitleText"}><b>{this.props.title}</b></a></div>
+            <div className={"jobTitleDiv"}>
+                <img className={"pinIcon"} src={this.showPin(this.props.user)} />
+                <a className={"jobTitleText"}>
+                    <b>{this.props.title}</b>
+                </a>
+                <p className={"dateText"}>Added {this.parseDate(this.props.date)}</p>
+            </div>
           <div className={"ratingContainer"} style={{float: 'right'}}>
             <img className="ratingStar"  src="./images/star-01.png" />
             <p className={"ratingText"}>{this.props.rating}</p>
           </div>
           <div style={{clear: 'both'}}></div>
         </div>
-
-        <p className={"payText"}>{this.props.pay}</p>
-        <p className={"payText"}>{this.parseDate(this.props.date)}</p>
+        <div className={"infoContainer"}>
+            <div className={"payContainer"}>
+                <img className="payIcon" src="./images/cash-icon.png"/>
+                <p className={"payText"}>{this.props.pay}</p>
+            </div>
+            <div className={"time Container"}>
+                <img className="timeIcon" src="./images/time-icon.png"/>
+                <p className={"timeText"}>{this.listHours(this.props.hours)}</p>
+            </div>
+        </div>
         {
           this.props.description.length > MAX_DESC_LENGTH ?
           (

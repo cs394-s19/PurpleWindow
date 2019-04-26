@@ -29,7 +29,8 @@ class App extends Component {
       currentPageIndex: 0,
       currentSelectedJob: {},
       currentJobNo: 0,
-      jobs: []
+      jobs: [],
+      user: null, // assume user has properties name (str), email (str), img (str), and arrays for jobs
     }
   }
 
@@ -69,6 +70,10 @@ class App extends Component {
     clickProfile = () => {
         this.setState({currentPageIndex: 3});
     }
+    
+    identifyUser = (userObject) => {
+        this.setState({user: userObject});
+    }
 
   render() {
     if (this.state.jobs.length == 0) {
@@ -76,17 +81,21 @@ class App extends Component {
     } else {
       switch (this.state.currentPageIndex) {
           case 0:
-              return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome} user={this.state.user}/>
           case 1:
               return <JobScreen job={this.state.currentSelectedJob} goBack={this.goBack}
-                                selectReviewJob={this.selectReviewJob} clickProfile={this.clickProfile} goHome={this.goHome}/>
+                                selectReviewJob={this.selectReviewJob} clickProfile={this.clickProfile} goHome={this.goHome} user={this.state.user}/>
           case 2:
               return <ReviewForm job={this.state.currentSelectedJob} goBack={this.goBack}
-                                 jobNo={this.state.currentJobNo} goHome={this.goHome}/>
+                                 jobNo={this.state.currentJobNo} goHome={this.goHome} user={this.state.user}/>
           case 3:
-              return <ProfileScreen goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              if (this.state.user) {
+                  return <ProfileScreen goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome} user={this.state.user}/>
+              } else {
+                  return <ProfileScreen goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome} identifyUser={this.identifyUser}/> // need LogIn screen, it returns user data
+              }
           default:
-              return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome} user={this.state.user}/>
       }
     }
   }
