@@ -3,6 +3,7 @@ import HomeScreen from './components/HomeScreen';
 import JobScreen from './components/JobScreen';
 import ReviewForm from './components/ReviewForm';
 import ProfileScreen from './components/ProfileScreen';
+//import SignIn from './components/SignIn';
 import './App.css';
 import firebase from 'firebase';
 import firebaseConfig from './firebaseConfig';
@@ -77,6 +78,8 @@ class App extends Component {
                                  jobNo={this.state.currentJobNo} goHome={this.goHome}/>
           case 3:
               return <ProfileScreen goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              //return <SignIn goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
+
           default:
               return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome}/>
       }
