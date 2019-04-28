@@ -42,6 +42,7 @@ class ReviewForm extends Component {
       recommend: this.state.recommend,
       currentEmployee: this.state.employee,
       flexible: this.state.flexible,
+      total: this.state.total,
       date: timestamp
     }
 
@@ -79,33 +80,43 @@ class ReviewForm extends Component {
             <p className="backButtonText">Back</p>
           </div>
           <div style={{width: "100%", height: 1, backgroundColor: "#3e3e3e", opacity: "0.2"}}></div>
-          <p className={"jobTitleText2"} style={{cursor: 'default'}}><b>Review {this.props.job.title}</b></p>
+          <p className={"jobTitleText2"} style={{cursor: 'default'}}><b>Review: {this.props.job.title}</b></p>
           <form onSubmit={this.handleSubmit}>
             <label>
-              Title: <input name="title" type="text" value={this.state.title} onChange={this.handleInputChange} />
+              <p className="sectionText" style={{marginBottom: 0}}>Title</p>
+              <input className={"reviewInput"} name="title" type="text" value={this.state.title} onChange={this.handleInputChange} />
             </label> <br />
             <label>
-              Pros: <input name="pros" type="text" value={this.state.pros} onChange={this.handleInputChange} />
+              <p className="sectionText" style={{marginBottom: 0}}>Pros</p>
+              <input className={"reviewInput"} name="pros" type="text" value={this.state.pros} onChange={this.handleInputChange} />
             </label> <br />
             <label>
-              Cons: <input name="cons" type="text" value={this.state.cons} onChange={this.handleInputChange} />
+              <p className="sectionText" style={{marginBottom: 0}}>Cons</p>
+              <input className={"reviewInput"} name="cons" type="text" value={this.state.cons} onChange={this.handleInputChange} />
             </label> <br />
             <label>
-              Total (1-5): <input name="total" type="number" value={this.state.total} onChange={this.handleInputChange} />
+              <p className="sectionText" style={{marginBottom: 0}}>Total (1-5)</p>
+              <input className={"reviewInput"} name="total" type="number" value={this.state.total} onChange={this.handleInputChange} />
             </label> <br />
             <label>
-              Are you a current employee?:
-              <input name="employee" type="checkbox" checked={this.state.employee} onChange={this.handleInputChange} />
+              <div style={{display: 'flex', marginBottom: 0}}>
+                <p className="sectionText">Are you a current employee?</p>
+                <input style={{width: 20, height: 20, marginTop: 25, marginLeft: 20}} name="employee" type="checkbox" checked={this.state.employee} onChange={this.handleInputChange} />
+              </div>
             </label> <br />
             <label>
-              Was this job flexible?:
-              <input name="flexible" type="checkbox" checked={this.state.flexible} onChange={this.handleInputChange} />
+              <div style={{display: 'flex', marginBottom: 0}}>
+                <p className="sectionText">Was this job flexible?</p>
+                <input style={{width: 20, height: 20, marginTop: 25, marginLeft: 20}} name="flexible" type="checkbox" checked={this.state.flexible} onChange={this.handleInputChange} />
+              </div>
             </label> <br />
             <label>
-              Would you recommend?:
-              <input name="recommend" type="checkbox" checked={this.state.recommend} onChange={this.handleInputChange} />
+              <div style={{display: 'flex', marginBottom: 0}}>
+                <p className="sectionText">Would you recommend?</p>
+                <input style={{width: 20, height: 20, marginTop: 25, marginLeft: 20}} name="recommend" type="checkbox" checked={this.state.recommend} onChange={this.handleInputChange} />
+              </div>
             </label> <br />
-            <input type="submit" value="Submit" />
+            <button type="submit" className={"contactButton"}>Submit</button>
           </form>
         </div>
       </div>
