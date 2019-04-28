@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import JobContainer from './JobContainer';
-import RankDropDownButton from './RankDropDownButton';
 import FilterButton from './FilterButton';
 
 function tagsContain(tagsArray,termsArray){
@@ -20,7 +19,7 @@ function tagsContain(tagsArray,termsArray){
 }
 
 function booleanToString(boolInput){
-  return boolInput 
+  return boolInput
     ? 'true'
     : 'false';
 }
@@ -76,8 +75,8 @@ class HomeScreen extends Component {
       let output = [...this.state.jobList];
       output.sort(function(a, b){return b.rating - a.rating});
       this.setState({jobList: output});
-    } 
-    
+    }
+
     else if (rankCriteria === "Hourly Wages (Minimum)") {
       let output = [...this.state.jobList];
       output.sort((a,b) => {
@@ -100,7 +99,7 @@ class HomeScreen extends Component {
 
   filterJobsByButtons = (e) => {
     let newFilters = JSON.parse(JSON.stringify(this.state.filters));
-    
+
     if (!this.isChecked(e)) {
       let index = newFilters[e.target.name].indexOf(e.target.value);
       newFilters[e.target.name].splice(index,1);
@@ -110,7 +109,7 @@ class HomeScreen extends Component {
         newFilters[e.target.name] = [];
         newFilters[e.target.name].push(e.target.value);
     }
-    
+
     else if (newFilters[e.target.name].includes(e.target.value) === false){
         newFilters[e.target.name].push(e.target.value);
     }
@@ -130,18 +129,18 @@ class HomeScreen extends Component {
   }
 
   checkFilters = (filters, job) => {
-    let shouldInclude = true 
+    let shouldInclude = true
 
     for (let category in filters){
       if (Array.isArray(job[category])){
         let included = filters[category].every((value) => job[category].includes(value))
         if (included === false){
-          shouldInclude = false 
+          shouldInclude = false
         }
       }
       else {
         if (!filters[category].includes(booleanToString(job[category]))){
-          shouldInclude = false  
+          shouldInclude = false
         }
       }
 
@@ -160,8 +159,7 @@ class HomeScreen extends Component {
         <div className={"searchContainer"}>
           <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobsBySearch} id={"searchTerms"}/>
         </div>
-        <FilterButton onClick={this.toggle2} className="dropBtn" filterJobsByButtons={this.filterJobsByButtons}/>
-        <RankDropDownButton isRankedByWhat={this.isRankedByWhat}/>
+        <FilterButton onClick={this.toggle2} className="dropBtn" filterJobsByButtons={this.filterJobsByButtons} isRankedByWhat={this.isRankedByWhat}/>
         {
           this.state.jobList.map((j, i) => {
             return <JobContainer key={i} title={j.title} date={j.date} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(i, j)} />

@@ -64,11 +64,11 @@ class RankDropDownButton extends Component {
         <div style={{display: 'flex', marginTop: 5}}>
           {
             this.state.value == 'Default' ? (
-              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center'}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', cursor: 'pointer'}}>
                 <p style={{color: '#ffffff', margin: '0 auto', marginTop: 4}} id="Default" onClick={(e) => {this.handleOptionClick(e)}}>Default</p>
               </div>
             ) : (
-              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', width: 100, height: 30, textAlign: 'center'}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', width: 100, height: 30, textAlign: 'center', cursor: 'pointer'}}>
                 <p style={{color: '#8e28c9', margin: '0 auto', marginTop: 4}} id="Default" onClick={(e) => {this.handleOptionClick(e)}}>Default</p>
               </div>
             )
@@ -76,11 +76,11 @@ class RankDropDownButton extends Component {
 
           {
             this.state.value == 'Ratings' ? (
-              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', marginLeft: 10}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', marginLeft: 10, cursor: 'pointer'}}>
                 <p style={{color: '#ffffff', margin: '0 auto', marginTop: 4}} id="Ratings" onClick={(e) => {this.handleOptionClick(e)}}>Ratings</p>
               </div>
             ) : (
-              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', width: 100, height: 30, textAlign: 'center', marginLeft: 10}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', width: 100, height: 30, textAlign: 'center', marginLeft: 10, cursor: 'pointer'}}>
                 <p style={{color: '#8e28c9', margin: '0 auto', marginTop: 4}} id="Ratings" onClick={(e) => {this.handleOptionClick(e)}}>Ratings</p>
               </div>
             )
@@ -88,11 +88,11 @@ class RankDropDownButton extends Component {
 
           {
             this.state.value == 'Pay' ? (
-              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', marginLeft: 10}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', marginLeft: 10, cursor: 'pointer'}}>
                 <p style={{color: '#ffffff', margin: '0 auto', marginTop: 4}} id="Pay" onClick={(e) => {this.handleOptionClick(e)}}>Pay</p>
               </div>
             ) : (
-              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', width: 100, height: 30, textAlign: 'center', marginLeft: 10}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', width: 100, height: 30, textAlign: 'center', marginLeft: 10, cursor: 'pointer'}}>
                 <p style={{color: '#8e28c9', margin: '0 auto', marginTop: 4}} id="Pay" onClick={(e) => {this.handleOptionClick(e)}}>Pay</p>
               </div>
             )
@@ -103,11 +103,11 @@ class RankDropDownButton extends Component {
         <div style={{display: 'flex', marginTop: 5}}>
           {
             this.state.value == 'Recent' ? (
-              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center'}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', backgroundColor: "#8e28c9", width: 100, height: 30, textAlign: 'center', cursor: 'pointer'}}>
                 <p style={{color: '#ffffff', margin: '0 auto', marginTop: 4}} id="Recent" onClick={(e) => {this.handleOptionClick(e)}}>Recent</p>
               </div>
             ) : (
-              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', width: 100, height: 30, textAlign: 'center'}}>
+              <div style={{borderColor: "#8e28c9", borderWidth: 2, borderStyle: 'solid', width: 100, height: 30, textAlign: 'center', cursor: 'pointer'}}>
                 <p style={{color: '#8e28c9', margin: '0 auto', marginTop: 4}} id="Recent" onClick={(e) => {this.handleOptionClick(e)}}>Recent</p>
               </div>
             )
