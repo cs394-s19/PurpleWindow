@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import ratings from '../rating.PNG';
+// import ratings from '../rating.PNG';
 
 class Review extends Component {
-  constructor(props) {
-    super(props);
-
-  }
-
   render() {
     const reviews = this.props.reviewDetails.job.reviews
     const reviewList = reviews.map(review => {
@@ -36,22 +31,19 @@ class Review extends Component {
   }
 }
 
-const reviewBoxStyle = {
-}
-
-const starRating = {
-  marginTop: '19px',
-  width: '4%',
-  height: '4%',
-}
+// const starRating = {
+//   marginTop: '19px',
+//   width: '4%',
+//   height: '4%',
+// }
 
 const reviewDescription = {
   marginTop: '0px',
 }
 
-const reviewTitle = {
-  color: "#8e28c9",
-  marginRight: '160px',
-};
+// const reviewTitle = {
+//   color: "#8e28c9",
+//   marginRight: '160px',
+// };
 
 export default Review;

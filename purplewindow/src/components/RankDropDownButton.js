@@ -9,7 +9,6 @@ class RankDropDownButton extends Component {
     this.state = {
       value: "Default",
       displayMenu: false,
-      rankJobs: false,
     }
   }
 
