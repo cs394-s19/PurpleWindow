@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import JobContainer from './JobContainer';
-import RankDropDownButton from './RankDropDownButton';
-import SortStateContainer from './SortStateContainer';
+import FilterButton from './FilterButton';
 
 function tagsContain(tagsArray,termsArray){
   for(var i = 0; i<tagsArray.length; i++){
@@ -19,11 +18,17 @@ function tagsContain(tagsArray,termsArray){
   return false;
 }
 
+function booleanToString(boolInput){
+  return boolInput
+    ? 'true'
+    : 'false';
+}
+
 function searchContains(title, description, terms){
   title = title.toLowerCase();
   description = description.toLowerCase();
   var termArray = terms.toLowerCase().split(' ');
-  if (termArray.length == 0){
+  if (termArray.length === 0){
     return false;
   }
   for(var i = 0; i<termArray.length; i++){
@@ -35,17 +40,14 @@ function searchContains(title, description, terms){
 }
 
 class HomeScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {jobList: this.props.jobs.slice()};
-    this.toggle = this.toggle.bind(this);
-    this.state = {
+    state = {
       jobList: this.props.jobs.slice(),
-      ranked: true
-    };
-  }
+      filters: {
 
-  filterJobs = () => {
+      }
+    }
+
+  filterJobsBySearch = () => {
       let terms = document.getElementById("searchTerms").value.toLowerCase();
       if (terms) {
           let filtered = this.props.jobs.filter(
@@ -60,63 +62,105 @@ class HomeScreen extends Component {
       }
   }
 
-  toggle() {
+  toggle = () => {
       document.getElementById("dropdown").classList.toggle("show");
   }
 
-  parseDate = (stringDate) => {
-    return stringDate.substring(4, 6) + "/" + stringDate.substring(6, 8) + "/" + stringDate.substring(0, 4)
+  toggle2 = (e) => {
+    document.getElementById("dropdown2").classList.toggle("show");
   }
 
-  isRankedByWhat = (rank) => {
-    if (rank == "Ratings") {
+  isRankedByWhat = (rankCriteria) => {
+    if (rankCriteria === "Ratings") {
       let output = [...this.state.jobList];
       output.sort(function(a, b){return b.rating - a.rating});
-      this.setState({ranked: true, jobList: output});
-    } else if (rank == "Pay") {
+      this.setState({jobList: output});
+    }
+
+    else if (rankCriteria === "Hourly Wages (Minimum)") {
       let output = [...this.state.jobList];
-      output.sort(function(a, b){return parseFloat(b.pay.replace("$", "").replace("/hr", "")) - parseFloat(a.pay.replace("$", "").replace("/hr", ""))});
-      this.setState({ranked: true, jobList: output});
-    } else if (rank == "Recent") {
-      let output = [...this.state.jobList];
-      output.sort((a, b) => {return new Date(this.parseDate(b.date)) - new Date(this.parseDate(a.date))});
-      this.setState({ranked: true, jobList: output});
-    } else {
+      output.sort((a,b) => {
+        return (b.pay.slice(1,6) - a.pay.slice(1,6))
+      })
+      this.setState({jobList: output})
+    }
+
+    else {
       this.setState({
-        ranked: false, jobList: this.props.jobs.slice()
+        jobList: this.props.jobs.slice()
       });
     }
   }
 
+  isChecked = (e) => {
+    let checked = document.getElementById(e.target.id);
+    return checked.checked
+  }
+
+  filterJobsByButtons = (e) => {
+    let newFilters = JSON.parse(JSON.stringify(this.state.filters));
+
+    if (!this.isChecked(e)) {
+      let index = newFilters[e.target.name].indexOf(e.target.value);
+      newFilters[e.target.name].splice(index,1);
+    }
+
+    else if (newFilters[e.target.name] === undefined){
+        newFilters[e.target.name] = [];
+        newFilters[e.target.name].push(e.target.value);
+    }
+
+    else if (newFilters[e.target.name].includes(e.target.value) === false){
+        newFilters[e.target.name].push(e.target.value);
+    }
+
+    this.setState({
+        filters: newFilters
+    })
+
+    let filtered = this.props.jobs.filter(
+      job => this.checkFilters(newFilters,job)
+    )
+
+    this.setState({
+      jobList: filtered
+    })
+
+  }
+
+  checkFilters = (filters, job) => {
+    let shouldInclude = true
+
+    for (let category in filters){
+      if (Array.isArray(job[category])){
+        let included = filters[category].every((value) => job[category].includes(value))
+        if (included === false){
+          shouldInclude = false
+        }
+      }
+      else {
+        if (!filters[category].includes(booleanToString(job[category]))){
+          shouldInclude = false
+        }
+      }
+
+    }
+
+    return shouldInclude;
+  }
+
 
   render() {
-    // let output = [...this.state.jobList];
-    // if (this.state.ranked) {
-    //   output.sort(function(a, b){return b.rating - a.rating});
-    // }
     return (
       <div>
         <div className={"headerContainer"}>
-          <p className={"headerText"} onClick={() => this.props.goHome()}>Purple Window</p>
-            <i className={"fas fa-user profileIcon"} onClick={() => this.props.clickProfile()}></i>
+          <p className={"headerText"}>Purple Window</p>
+          <i className={"fas fa-user profileIcon"} onClick={() => this.props.clickProfile()}></i>
         </div>
         <div className={"searchContainer"}>
-          <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobs} id={"searchTerms"}/>
+          <input className={"searchBox"} placeholder={"Search opportunities..."} onKeyUp={this.filterJobsBySearch} id={"searchTerms"}/>
         </div>
-          <div className={"filterContainer"}>
-              <p onClick={this.toggle} className={"dropBtn"}>Filter <i className="fas fa-angle-down"></i></p>
-              <div id={"dropdown"} className={"dropContent"}>
-                <div id={"filter"}>
-                  Info
-                  Some more Info
-                  Some more
-                </div>
-                <br></br>
-                <div id={"sort"}>
-                  <RankDropDownButton isRankedByWhat={this.isRankedByWhat}/>
-                </div>
-              </div>
-          </div>
+        <FilterButton onClick={this.toggle2} className="dropBtn" filterJobsByButtons={this.filterJobsByButtons} isRankedByWhat={this.isRankedByWhat}/>
         {
           this.state.jobList.map((j, i) => {
             return <JobContainer key={i} title={j.title} date={j.date} rating={j.rating} pay={j.pay} tags={j.tags} hours={j.hours} description={j.description} selectJob={e => this.props.selectJob(i, j)} />

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Review from './Review';
-import ReviewForm from './ReviewForm';
 
 class JobScreen extends Component {
   constructor(props) {
@@ -67,23 +66,23 @@ class JobScreen extends Component {
   }
 }
 
-const headerContainer = {
-  height: 50,
-  backgroundColor: "#8e28c9",
-  width: "100%",
-  textAlign: 'center',
-};
+// const headerContainer = {
+//   height: 50,
+//   backgroundColor: "#8e28c9",
+//   width: "100%",
+//   textAlign: 'center',
+// };
 
-const headerText = {
-  fontSize: "15px",
-  color: "#e8e8e6",
-  margin: "0 auto",
-  lineHeight: 3,
-};
+// const headerText = {
+//   fontSize: "15px",
+//   color: "#e8e8e6",
+//   margin: "0 auto",
+//   lineHeight: 3,
+// };
 
-const description = {
-  marginTop: '19px',
-  marginBottom: '20px'
-}
+// const description = {
+//   marginTop: '19px',
+//   marginBottom: '20px'
+// }
 
 export default JobScreen;

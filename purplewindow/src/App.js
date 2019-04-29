@@ -3,19 +3,11 @@ import HomeScreen from './components/HomeScreen';
 import JobScreen from './components/JobScreen';
 import ReviewForm from './components/ReviewForm';
 import ProfileScreen from './components/ProfileScreen';
-import logo from './logo.svg';
 import './App.css';
 import firebase from 'firebase';
+import firebaseConfig from './firebaseConfig';
 
 // Initialize Firebase
-var firebaseConfig = {
-    apiKey: "AIzaSyD26AQhzl73lJeBzGZ4EsSOKcpICv2FA1o",
-    authDomain: "purplewindow-3acf0.firebaseapp.com",
-    databaseURL: "https://purplewindow-3acf0.firebaseio.com",
-    projectId: "purplewindow-3acf0",
-    storageBucket: "purplewindow-3acf0.appspot.com",
-    messagingSenderId: "794968149806"
-};
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.database();

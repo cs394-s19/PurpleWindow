@@ -311,3 +311,10 @@ html {
 .jobAccordion {
   padding-top: 10px;
 }
+
+.reviewInput {
+  width: 95%;
+  margin: 0px auto;
+  height: 30px;
+  margin-top: 0px;
+}
