@@ -22,6 +22,7 @@ class App extends Component {
       currentSelectedJob: {},
       currentJobNo: 0,
       jobs: [],
+        users: {name: 'Adeline Rohrbach', email: 'adelinerohrbach2020@u.northwestern.edu', pins: []},
     }
   }
 
@@ -68,7 +69,7 @@ class App extends Component {
     } else {
       switch (this.state.currentPageIndex) {
           case 0:
-              return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              return <HomeScreen users={this.state.users} selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome}/>
           case 1:
               return <JobScreen job={this.state.currentSelectedJob} goBack={this.goBack}
                                 selectReviewJob={this.selectReviewJob} clickProfile={this.clickProfile} goHome={this.goHome}/>
@@ -76,7 +77,7 @@ class App extends Component {
               return <ReviewForm job={this.state.currentSelectedJob} goBack={this.goBack}
                                  jobNo={this.state.currentJobNo} goHome={this.goHome}/>
           case 3:
-              return <ProfileScreen goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              return <ProfileScreen users={this.state.users} goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
           default:
               return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome}/>
       }

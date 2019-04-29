@@ -29,8 +29,8 @@ class ProfileScreen extends Component {
                             <i className={"fas fa-user"}></i>
                         </div>
                         <div className={"nameContainer"}>
-                            <h3 className={"fullname"}>Adeline Rohrbach</h3>
-                            <h5 className={"email"}>adelinerohrbach2020@u.northwestern.edu</h5>
+                            <h3 className={"fullname"}>{this.props.users.name}</h3>
+                            <h5 className={"email"}>{this.props.users.email}</h5>
                         </div>
                     </div>
                     <div className={"jobAccordion"}>
