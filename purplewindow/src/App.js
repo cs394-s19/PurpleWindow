@@ -21,7 +21,7 @@ class App extends Component {
       currentPageIndex: 0,
       currentSelectedJob: {},
       currentJobNo: 0,
-      jobs: []
+      jobs: [],
     }
   }
 

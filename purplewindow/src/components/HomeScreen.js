@@ -163,7 +163,7 @@ class HomeScreen extends Component {
         <FilterButton onClick={this.toggle2} className="dropBtn" filterJobsByButtons={this.filterJobsByButtons} isRankedByWhat={this.isRankedByWhat}/>
         {
           this.state.jobList.map((j, i) => {
-            return <JobContainer key={i} title={j.title} date={j.date} rating={j.rating} pay={j.pay} tags={j.tags} description={j.description} selectJob={e => this.props.selectJob(i, j)} />
+            return <JobContainer key={i} title={j.title} date={j.date} rating={j.rating} pay={j.pay} tags={j.tags} hours={j.hours} description={j.description} selectJob={e => this.props.selectJob(i, j)} />
           })
         }
 

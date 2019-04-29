@@ -119,6 +119,13 @@ html {
   display: inline-block;
 }
 
+.pinIcon {
+    width: 25px;
+    float: left;
+    /*display: inline-block;*/
+    margin-right: 5px;
+}
+
 .ratingContainer {
   width: 80px;
   height: 30px;
@@ -140,8 +147,57 @@ html {
   margin-top: 5px;
 }
 
+.dateText {
+  margin-top: 3%;
+  color: #606060;
+  font-style: italic;
+  padding-bottom: 0;
+  margin-bottom: 8px;
+}
+
+.infoContainer {
+    display: inline-block;
+    margin-bottom: -10px;
+}
+
+.payContainer {
+    text-align: center;
+    display: inline-block;
+}
+
+.payIcon {
+    width: 25px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
 .payText {
   color: #8e28c9;
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+  margin-top: 0;
+  color: black;
+}
+
+.timeContainer {
+    text-align: center;
+    display: inline-block;
+}
+
+.timeIcon {
+    width: 25px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.timeText {
+  color: #8e28c9;
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+  margin-top: 0;
+  color: black;
 }
 
 .backButtonText {
