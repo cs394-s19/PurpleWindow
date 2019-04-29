@@ -98,6 +98,12 @@ class HomeScreen extends Component {
   }
 
   filterJobsByButtons = (e) => {
+    /*
+    obj {
+      onCampus = [true,false];
+      tags = [undergrad,grad];
+    }
+    */
     let newFilters = JSON.parse(JSON.stringify(this.state.filters));
 
     if (!this.isChecked(e)) {
@@ -125,22 +131,25 @@ class HomeScreen extends Component {
     this.setState({
       jobList: filtered
     })
-
+    console.log(newFilters);
   }
 
   checkFilters = (filters, job) => {
+ 
     let shouldInclude = true
 
     for (let category in filters){
       if (Array.isArray(job[category])){
+        // Checking tags
         let included = filters[category].every((value) => job[category].includes(value))
         if (included === false){
-          shouldInclude = false
+          shouldInclude = filters.tags.length % 2 == 0;
         }
       }
       else {
+        // Checking onCampus
         if (!filters[category].includes(booleanToString(job[category]))){
-          shouldInclude = false
+          shouldInclude = filters.onCampus.length % 2 == 0;
         }
       }
 
