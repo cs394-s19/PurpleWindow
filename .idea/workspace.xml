@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93d296f5-0487-43d2-af82-89d310a6a633" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/purplewindow/src/components/ProfileScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purplewindow/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/purplewindow/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purplewindow/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/purplewindow/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purplewindow/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/purplewindow/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/purplewindow/src/components/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/purplewindow/src/components/HomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purplewindow/src/components/JobScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/purplewindow/src/components/JobScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purplewindow/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/purplewindow/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +16,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purplewindow/src/components/Review.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+            <state relative-caret-position="150">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purplewindow/src/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1122">
+              <caret line="255" column="20" selection-start-line="255" selection-start-column="20" selection-end-line="255" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purplewindow/src/components/JobContainer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="108" selection-start-line="17" selection-start-column="108" selection-end-line="17" selection-end-column="108" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purplewindow/src/components/JobScreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="23" column="93" selection-start-line="23" selection-start-column="93" selection-end-line="23" selection-end-column="93" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -32,43 +56,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/purplewindow/src/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1108">
-              <caret line="251" column="20" selection-start-line="251" selection-start-column="20" selection-end-line="251" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purplewindow/src/components/JobContainer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="111" selection-start-line="13" selection-start-column="73" selection-end-line="13" selection-end-column="111" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purplewindow/src/components/JobScreen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="100" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="100" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purplewindow/src/components/HomeScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
-              <caret line="62" column="2" selection-start-line="62" selection-start-column="2" selection-end-line="64" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="807">
+              <caret line="159" column="32" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -77,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/purplewindow/src/components/ProfileScreen.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="44" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+              <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -85,7 +76,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purplewindow/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15614">
+            <state relative-caret-position="-168">
               <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
             </state>
           </provider>
@@ -104,11 +95,11 @@
         <option value="$PROJECT_DIR$/purplewindow/src/index.js" />
         <option value="$PROJECT_DIR$/purplewindow/public/index.html" />
         <option value="$PROJECT_DIR$/purplewindow/src/App.js" />
-        <option value="$PROJECT_DIR$/purplewindow/src/components/HomeScreen.js" />
         <option value="$PROJECT_DIR$/purplewindow/src/components/JobScreen.js" />
         <option value="$PROJECT_DIR$/purplewindow/src/App.css" />
         <option value="$PROJECT_DIR$/purplewindow/src/components/ProfileScreen.js" />
         <option value="$PROJECT_DIR$/purplewindow/src/index.css" />
+        <option value="$PROJECT_DIR$/purplewindow/src/components/HomeScreen.js" />
       </list>
     </option>
   </component>
@@ -123,42 +114,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="PurpleWindow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PurpleWindow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PurpleWindow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PurpleWindow" type="462c0819:PsiDirectoryNode" />
-              <item name="purplewindow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PurpleWindow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PurpleWindow" type="462c0819:PsiDirectoryNode" />
-              <item name="purplewindow" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PurpleWindow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PurpleWindow" type="462c0819:PsiDirectoryNode" />
-              <item name="purplewindow" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PurpleWindow" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PurpleWindow" type="462c0819:PsiDirectoryNode" />
-              <item name="purplewindow" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,17 +153,18 @@
       <workItem from="1555604169185" duration="271000" />
       <workItem from="1555971437836" duration="1057000" />
       <workItem from="1556056937025" duration="4231000" />
+      <workItem from="1556575084920" duration="247000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12165000" />
+    <option name="totallyTimeSpent" value="12412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1280" height="1497" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15185784" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15670437" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -220,7 +178,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.20071174" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.14733095" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.14661922" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -244,16 +202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purplewindow/src/components/Review.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purplewindow/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -274,17 +222,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purplewindow/src/App.js">
+    <entry file="file://$PROJECT_DIR$/purplewindow/src/components/Review.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15614">
-          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purplewindow/src/components/JobScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="100" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="100" />
+        <state relative-caret-position="150">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -293,22 +234,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/purplewindow/src/components/JobContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="111" selection-start-line="13" selection-start-column="73" selection-end-line="13" selection-end-column="111" />
+        <state relative-caret-position="255">
+          <caret line="17" column="108" selection-start-line="17" selection-start-column="108" selection-end-line="17" selection-end-column="108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purplewindow/src/components/ProfileScreen.js">
+    <entry file="file://$PROJECT_DIR$/purplewindow/src/components/JobScreen.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="44" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purplewindow/src/components/HomeScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="62" column="2" selection-start-line="62" selection-start-column="2" selection-end-line="64" selection-end-column="3" />
+        <state relative-caret-position="315">
+          <caret line="23" column="93" selection-start-line="23" selection-start-column="93" selection-end-line="23" selection-end-column="93" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -317,8 +251,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/purplewindow/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1108">
-          <caret line="251" column="20" selection-start-line="251" selection-start-column="20" selection-end-line="251" selection-end-column="20" />
+        <state relative-caret-position="1122">
+          <caret line="255" column="20" selection-start-line="255" selection-start-column="20" selection-end-line="255" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purplewindow/src/components/ProfileScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purplewindow/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168">
+          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purplewindow/src/components/HomeScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="159" column="32" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
         </state>
       </provider>
     </entry>
