@@ -21,7 +21,16 @@ class JobContainer extends Component {
       }
   }
 
+  addPin(event) {
+      if (event.currentTarget.src === "./images/pin-full.png") {
+          event.currentTarget.src = "./images/pin-empty.png";
+      } else if (event.currentTarget.src === "./images/pin-empty.png") {
+          event.currentTarget.src = "./images/pin-empty.png";
+      }
+  }
+
   render() {
+      let addPin = this.addPin.bind(this)
     return (
       <div className={"jobContainer"}>
         <div>

@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 
+function checkEmpty(currstate){
+    if(currstate.title.length == 0
+      || currstate.pros.length == 0
+      || currstate.cons.length == 0
+      || currstate.recommend.length == 0
+      || currstate.employee.length == 0
+      || currstate.flexible.length == 0
+      || currstate.total.length == 0){
+      return true;
+    }
+    return false;
+  }
+
 class ReviewForm extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +42,10 @@ class ReviewForm extends Component {
   }
 
   handleSubmit(event) {
+    if(checkEmpty(this.state)){
+      alert('Please fill out all the required fields');
+      return;
+    }
     event.preventDefault();
     alert('Thank you for your review of ' + this.props.job.title);
 

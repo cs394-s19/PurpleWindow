@@ -28,6 +28,7 @@ class App extends Component {
               contacted: [], 
               heardBack: [],
              }
+
     }
   }
 
@@ -118,6 +119,7 @@ class App extends Component {
       switch (this.state.currentPageIndex) {
           case 0:
               return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome} saved={this.state.users.saved} changePin={this.changePin}/>
+
           case 1:
               return <JobScreen job={this.state.currentSelectedJob} goBack={this.goBack}
                                 selectReviewJob={this.selectReviewJob} clickProfile={this.clickProfile} goHome={this.goHome} users={this.state.users} addContact={this.addContact}/>
