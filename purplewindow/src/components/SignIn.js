@@ -19,7 +19,7 @@ class SignIn extends Component {
       if((user.email).includes('.northwestern.edu')){ //if the user has an NU email
         profile = ( //actually sign in
         <div>
-          <ProfileScreen user={user} goBack={this.props.goBack} clickProfile={this.props.clickProfile} goHome={this.props.goHome}/>
+          <ProfileScreen users={this.props.users} user={user} goBack={this.props.goBack} clickProfile={this.props.clickProfile} goHome={this.props.goHome}/>
         </div>
         );
       }

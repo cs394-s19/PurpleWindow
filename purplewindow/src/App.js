@@ -122,7 +122,7 @@ class App extends Component {
                                  jobNo={this.state.currentJobNo} goHome={this.goHome} users={this.state.users}/>
           case 3:
               //return <ProfileScreen users={this.state.users} goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
-              return <SignIn goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              return <SignIn goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome} users={this.state.users}/>
           default:
               return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome} users={this.state.users}/>
       }
