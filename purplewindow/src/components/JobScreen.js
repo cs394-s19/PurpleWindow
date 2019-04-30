@@ -10,9 +10,6 @@ class JobScreen extends Component {
     window.scrollTo(0, 0)
   }
   render() {
-      function contactAlert() {
-        alert("You have contacted the company.");
-      }
     return (
       <div>
         <div className={"headerContainer"}>
@@ -34,7 +31,7 @@ class JobScreen extends Component {
             <p className="jobDepartment">{this.props.job.employer}</p>
           </div>
           <p>$10/hour     ;       10hrs/week</p>
-            <button className={"contactButton"} onClick={contactAlert}>Click to Contact Employer</button>
+            <button className={"contactButton"} onClick={() => this.props.addContact()}>Click to Contact Employer</button>
           <p className="sectionText"><b>Description</b></p>
           <div style={{width: "100%", height: 1, backgroundColor: "#3e3e3e", opacity: "0.2"}}></div>
           <p>The Research Aide will provide research and administrative support for several studies related to educational policy conducted by Professor Cynthia Coburn. This position begins in Spring 2019, with the possibility to renew. Duties include: coding interview transcripts and surveys, entering data into qualitative and quantitative software programs, reviewing literature, and performing other administrative duties. We are looking for a commitment of 8 to 10 hours per week.</p>
