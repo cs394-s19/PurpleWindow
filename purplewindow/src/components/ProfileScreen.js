@@ -37,7 +37,7 @@ class ProfileScreen extends Component {
                         <button className={"accordion"} onClick={toggle}> Jobs Saved ({this.props.users.saved.length}) </button>
                         <div className={"panel"}> {this.props.users.saved} </div>
                         <button className={"accordion"} onClick={toggle}>Jobs Reached Out To ({this.props.users.contacted.length}) </button>
-                        <div className={"panel"}> Example </div>
+                        <div className={"panel"}> {this.props.users.contacted} </div>
                         <button className={"accordion"} onClick={toggle}>Jobs Heard Back From ({this.props.users.heardBack.length}) </button>
                         <div className={"panel"}> Example</div>
                     </div>

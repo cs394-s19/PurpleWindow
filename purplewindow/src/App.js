@@ -97,9 +97,10 @@ class App extends Component {
         }
     }
     
-    addContact = (title) => {
+    addContact = () => {
         let duped = this.state.users.contacted.slice();
-        duped.push(title);
+        let newly_contacted = this.state.currentSelectedJob.title;
+        duped.push(newly_contacted);
         let new_user_obj = {name: this.state.users.name,
                             email: this.state.users.email,
                             saved: this.state.users.saved,
@@ -107,7 +108,7 @@ class App extends Component {
                             heardBack: this.state.users.heardBack,};
         let update_user = Object.assign(this.state.users, new_user_obj);
         this.setState({users: update_user});
-        //alert("You have contacted " + title + ".");
+        alert("You have contacted the " + this.state.currentSelectedJob.employer + " about " + newly_contacted + ".");
     }
 
   render() {
@@ -119,7 +120,7 @@ class App extends Component {
               return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome} saved={this.state.users.saved} changePin={this.changePin}/>
           case 1:
               return <JobScreen job={this.state.currentSelectedJob} goBack={this.goBack}
-                                selectReviewJob={this.selectReviewJob} clickProfile={this.clickProfile} goHome={this.goHome} users={this.state.users} addContact={e => this.addContact}/>
+                                selectReviewJob={this.selectReviewJob} clickProfile={this.clickProfile} goHome={this.goHome} users={this.state.users} addContact={this.addContact}/>
           case 2:
               return <ReviewForm job={this.state.currentSelectedJob} goBack={this.goBack}
                                  jobNo={this.state.currentJobNo} goHome={this.goHome} users={this.state.users}/>
