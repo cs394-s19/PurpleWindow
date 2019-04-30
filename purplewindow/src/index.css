@@ -44,8 +44,7 @@ html {
 }
 
 .searchContainer {
-  width: 100%;
-  margin: 0px auto;
+  width: 95%;
   padding: 10px;
   background-color: #ffffff;
 }
@@ -317,4 +316,19 @@ html {
   margin: 0px auto;
   height: 30px;
   margin-top: 0px;
+}
+
+.messageText {
+  font-family: 'Raleway';
+  color: #3e3e3e;
+  font-size: 20px;
+}
+
+.signInButton {
+  background-color: #8e28c9;
+  width: 200px;
+  height: 40px;
+  color: white;
+  font-size: 15px;
+  border: none;
 }

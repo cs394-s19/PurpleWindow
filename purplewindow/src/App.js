@@ -3,15 +3,9 @@ import HomeScreen from './components/HomeScreen';
 import JobScreen from './components/JobScreen';
 import ReviewForm from './components/ReviewForm';
 import ProfileScreen from './components/ProfileScreen';
+import SignIn from './components/SignIn';
 import './App.css';
-import firebase from 'firebase';
-import firebaseConfig from './firebaseConfig';
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-const db = firebase.database();
-// const ref = db.ref("purplewindow-3acf0");
+import firebase from './firebaseConfig';
 
 class App extends Component {
 
@@ -77,7 +71,8 @@ class App extends Component {
               return <ReviewForm job={this.state.currentSelectedJob} goBack={this.goBack}
                                  jobNo={this.state.currentJobNo} goHome={this.goHome}/>
           case 3:
-              return <ProfileScreen users={this.state.users} goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              //return <ProfileScreen users={this.state.users} goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              return <SignIn goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
           default:
               return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome}/>
       }

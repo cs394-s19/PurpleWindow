@@ -135,7 +135,7 @@ class HomeScreen extends Component {
   }
 
   checkFilters = (filters, job) => {
- 
+
     let shouldInclude = true
 
     for (let category in filters){
