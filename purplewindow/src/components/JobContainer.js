@@ -11,14 +11,6 @@ class JobContainer extends Component {
     return stringDate.substring(4, 6) + "/" + stringDate.substring(6, 8) + "/" + stringDate.substring(0, 4)
   }
   
-  showPin = (user) => {
-      if (user && user.saved.indexOf(this.props.title) >= 0) {
-          return "./images/pin-full.png"
-      } else {
-          return "./images/pin-empty.png"
-      }
-  } // needs onClick to add / remove job from saved list
-  
   listHours = (hoursText) => {
       if (!(hoursText)) {
           return "TBD"
@@ -31,11 +23,11 @@ class JobContainer extends Component {
 
   render() {
     return (
-      <div className={"jobContainer"} onClick={() => this.props.selectJob()}>
+      <div className={"jobContainer"}>
         <div>
             <div className={"jobTitleDiv"}>
-                <img className={"pinIcon"} src={this.showPin(this.props.user)} />
-                <a className={"jobTitleText"}>
+                <img className={"pinIcon"} src={this.props.pin} onClick={() => this.props.changePin()}/>
+                <a className={"jobTitleText"} onClick={() => this.props.selectJob()}>
                     <b>{this.props.title}</b>
                 </a>
                 <p className={"dateText"}>Added {this.parseDate(this.props.date)}</p>

@@ -29,16 +29,16 @@ class ProfileScreen extends Component {
                             <i className={"fas fa-user"}></i>
                         </div>
                         <div className={"nameContainer"}>
-                            <h3 className={"fullname"}>Adeline Rohrbach</h3>
-                            <h5 className={"email"}>adelinerohrbach2020@u.northwestern.edu</h5>
+                            <h3 className={"fullname"}>{this.props.users.name}</h3>
+                            <h5 className={"email"}>{this.props.users.email}</h5>
                         </div>
                     </div>
                     <div className={"jobAccordion"}>
-                        <button className={"accordion"} onClick={toggle}>Saved Jobs</button>
-                        <div className={"panel"}> Saved Jobs </div>
-                        <button className={"accordion"} onClick={toggle}>Jobs Contacts/Applied To</button>
+                        <button className={"accordion"} onClick={toggle}> Jobs Saved ({this.props.users.saved.length}) </button>
+                        <div className={"panel"}> {this.props.users.saved} </div>
+                        <button className={"accordion"} onClick={toggle}>Jobs Reached Out To ({this.props.users.contacted.length}) </button>
                         <div className={"panel"}> Example </div>
-                        <button className={"accordion"} onClick={toggle}>Jobs Received Response From</button>
+                        <button className={"accordion"} onClick={toggle}>Jobs Heard Back From ({this.props.users.heardBack.length}) </button>
                         <div className={"panel"}> Example</div>
                     </div>
                 </div>

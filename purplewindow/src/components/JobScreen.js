@@ -13,6 +13,7 @@ class JobScreen extends Component {
       function contactAlert() {
         alert("You have contacted the company.");
       }
+//      } this.props.addContact(this.props.job.title)
     return (
       <div>
         <div className={"headerContainer"}>
