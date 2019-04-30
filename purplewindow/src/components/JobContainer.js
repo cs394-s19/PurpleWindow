@@ -41,7 +41,7 @@ class JobContainer extends Component {
                 </a>
                 <p className={"dateText"}>Added {this.parseDate(this.props.date)}</p>
             </div>
-          <div className={"ratingContainer"} style={{float: 'right'}}>
+          <div className={"ratingContainer"}>
             <img className="ratingStar"  src="./images/star-01.png" />
             <p className={"ratingText"}>{this.props.rating}</p>
           </div>
