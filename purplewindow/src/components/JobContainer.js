@@ -35,13 +35,13 @@ class JobContainer extends Component {
       <div className={"jobContainer"}>
         <div>
             <div className={"jobTitleDiv"}>
-                <img className={"pinIcon"} src="./images/pin-empty.png" onClick={addPin}/>
+                <img className={"pinIcon"} src={this.props.pin} onClick={() => this.props.changePin()}/>
                 <a className={"jobTitleText"} onClick={() => this.props.selectJob()}>
                     <b>{this.props.title}</b>
                 </a>
                 <p className={"dateText"}>Added {this.parseDate(this.props.date)}</p>
             </div>
-          <div className={"ratingContainer"} style={{float: 'right'}}>
+          <div className={"ratingContainer"}>
             <img className="ratingStar"  src="./images/star-01.png" />
             <p className={"ratingText"}>{this.props.rating}</p>
           </div>

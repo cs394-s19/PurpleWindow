@@ -157,7 +157,16 @@ class HomeScreen extends Component {
 
     return shouldInclude;
   }
-
+  
+  checkSaved = (title) => {
+      let dup_list = this.props.saved.slice();
+      let listIndex = dup_list.indexOf(title);
+      if (listIndex >= 0) {
+          return "./images/pin-full.png";
+      } else {
+          return "./images/pin-empty.png";
+      }
+  }
 
   render() {
     return (
@@ -172,7 +181,7 @@ class HomeScreen extends Component {
         <FilterButton onClick={this.toggle2} className="dropBtn" filterJobsByButtons={this.filterJobsByButtons} isRankedByWhat={this.isRankedByWhat}/>
         {
           this.state.jobList.map((j, i) => {
-            return <JobContainer users={this.props.users} key={i} title={j.title} date={j.date} rating={j.rating} pay={j.pay} tags={j.tags} hours={j.hours} description={j.description} selectJob={e => this.props.selectJob(i, j)} />
+            return <JobContainer key={i} title={j.title} date={j.date} rating={j.rating} pay={j.pay} tags={j.tags} hours={j.hours} pin={this.checkSaved(j.title)} changePin={e => this.props.changePin(j.title)} description={j.description} selectJob={e => this.props.selectJob(i, j)} />
           })
         }
 

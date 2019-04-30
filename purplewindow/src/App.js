@@ -16,7 +16,13 @@ class App extends Component {
       currentSelectedJob: {},
       currentJobNo: 0,
       jobs: [],
-        users: {name: 'Adeline Rohrbach', email: 'adelinerohrbach2020@u.northwestern.edu', pins: []},
+      users: {name: "Adeline Rohrbach",
+              email: "adelinerohrbach2020@u.northwestern.edu",
+              saved: [],
+              contacted: [],
+              heardBack: [],
+             }
+
     }
   }
 
@@ -57,24 +63,68 @@ class App extends Component {
         this.setState({currentPageIndex: 3});
     }
 
+    changePin = (title) => {
+        let listIndex = this.state.users.saved.indexOf(title);
+        if (listIndex >= 0) {
+            let dup_list = this.state.users.saved.slice();
+            if (dup_list.length > 1) {
+                dup_list.splice(listIndex, 1);
+            } else {
+                dup_list = [];
+            }
+            let new_user_obj = {name: this.state.users.name,
+                               email: this.state.users.email,
+                               saved: dup_list,
+                               contacted: this.state.users.contacted,
+                               heardBack: this.state.users.heardBack,};
+            let update_user = Object.assign(this.state.users, new_user_obj);
+            this.setState({users: update_user});
+        } else {
+            let updated_list = this.state.users.saved.slice();
+            updated_list.push(title);
+            let new_user_obj = {name: this.state.users.name,
+                               email: this.state.users.email,
+                               saved: updated_list,
+                               contacted: this.state.users.contacted,
+                               heardBack: this.state.users.heardBack,};
+            let update_user = Object.assign(this.state.users, new_user_obj);
+            this.setState({users: update_user});
+        }
+    }
+
+    addContact = () => {
+        let duped = this.state.users.contacted.slice();
+        let newly_contacted = this.state.currentSelectedJob.title;
+        duped.push(newly_contacted);
+        let new_user_obj = {name: this.state.users.name,
+                            email: this.state.users.email,
+                            saved: this.state.users.saved,
+                            contacted: duped,
+                            heardBack: this.state.users.heardBack,};
+        let update_user = Object.assign(this.state.users, new_user_obj);
+        this.setState({users: update_user});
+        alert("You have contacted the " + this.state.currentSelectedJob.employer + " about " + newly_contacted + ".");
+    }
+
   render() {
     if (this.state.jobs.length == 0) {
       return <div></div>;
     } else {
       switch (this.state.currentPageIndex) {
           case 0:
-              return <HomeScreen users={this.state.users} selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome} saved={this.state.users.saved} changePin={this.changePin}/>
+
           case 1:
               return <JobScreen job={this.state.currentSelectedJob} goBack={this.goBack}
-                                selectReviewJob={this.selectReviewJob} clickProfile={this.clickProfile} goHome={this.goHome}/>
+                                selectReviewJob={this.selectReviewJob} clickProfile={this.clickProfile} goHome={this.goHome} users={this.state.users} addContact={this.addContact}/>
           case 2:
               return <ReviewForm job={this.state.currentSelectedJob} goBack={this.goBack}
-                                 jobNo={this.state.currentJobNo} goHome={this.goHome}/>
+                                 jobNo={this.state.currentJobNo} goHome={this.goHome} users={this.state.users}/>
           case 3:
               //return <ProfileScreen users={this.state.users} goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
               return <SignIn goBack={this.goBack} clickProfile={this.clickProfile} goHome={this.goHome}/>
           default:
-              return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome}/>
+              return <HomeScreen selectJob={this.selectJob} jobs={this.state.jobs} clickProfile={this.clickProfile} goHome={this.goHome} users={this.state.users}/>
       }
     }
   }
